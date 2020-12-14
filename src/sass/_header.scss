@@ -186,7 +186,6 @@
     transform: translatex(100%);
     &.is-open {
       transform: translatex(0);
-      background-color: #fff;
     }
   }
   @media screen and (min-width: 768px) {
@@ -239,6 +238,7 @@
   margin: 0;
   padding-top: 70px;
   padding-bottom: 115px;
+  background-color: #fff;
   &__item {
     @media screen and (max-width: 1279px) {
       padding-left: 35px;
