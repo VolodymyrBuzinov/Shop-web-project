@@ -1,6 +1,5 @@
 import refreshToken from './refresh-token';
-const sid = sessionStorage.getItem('sid');
-const access = sessionStorage.getItem('token');
+ const access = sessionStorage.getItem('token');
 function getUser(acces) {
     const requestOptions = {
         method: 'GET',
@@ -14,6 +13,8 @@ function getUser(acces) {
         .then(response => response.json())
         .then(result => {
             console.log(result);
+            const sid = sessionStorage.getItem('sid');
+           
             if(result.message === 'Unauthorized'){
                 console.log('ошибкa');
                 refreshToken({sid: `${sid}`}, access);

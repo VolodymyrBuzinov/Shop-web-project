@@ -12,7 +12,7 @@ export default async function login(log) {
     };
   
     try {
-      await fetch("https://callboard-backend.herokuapp.com/auth/login", requestOptions)
+      return await fetch("https://callboard-backend.herokuapp.com/auth/login", requestOptions)
   
         .then(response => response.json())
         .then(result => {
@@ -24,20 +24,19 @@ export default async function login(log) {
             pushError(result.message)
           } else if (result.message === '"password" is not allowed to be empty'){
             pushError(result.message)
-          } else {
-            console.log(result);
-            
+          } else {                        
             sessionStorage.setItem('token', result.accessToken);
             sessionStorage.setItem('sid', result.sid);
             sessionStorage.setItem('refresh', result.refreshToken);
-           
-
             document.getElementById('form').reset();
             toggleRegisterModal();
+            return result.user;
           }
         })
+      .then(user => console.log(user))
     }
     catch (error) {
       console.log('error', error);
     };
   }
+  

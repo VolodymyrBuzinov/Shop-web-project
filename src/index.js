@@ -12,7 +12,7 @@ import './js/auth-modal/auth-modal';
  import './js/pagination/pagination';
 import "./js/search-form/search-form.js";
  import './js/add-modal-logic/add-modal-send'
-
+import './js/favourites&calls/favourites&calls'
 
 
 
