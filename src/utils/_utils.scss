@@ -63,6 +63,7 @@ body {
 }
 // Стили UL API
 %list-style {
+  @extend %list-throw;
   display: grid;
   grid-gap: 20px;
   @media screen and (min-width: 320px) {

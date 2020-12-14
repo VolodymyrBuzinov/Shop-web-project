@@ -1,6 +1,7 @@
 import toggleRegisterModal from './open-close-modal';
 import pushError from './error-message';
-
+import favouritesCalls from '../../templates/favourites/favourites-and-myCalls.hbs';
+const renderContainer = document.querySelector('.pagination-div')
 
 export default async function login(log) {
     const requestOptions = {
@@ -10,10 +11,9 @@ export default async function login(log) {
       },
       body: JSON.stringify(log)
     };
-  
+   
     try {
-      return await fetch("https://callboard-backend.herokuapp.com/auth/login", requestOptions)
-  
+      await fetch("https://callboard-backend.herokuapp.com/auth/login", requestOptions)  
         .then(response => response.json())
         .then(result => {
           if (result.message === 'Password is wrong') {
@@ -33,7 +33,12 @@ export default async function login(log) {
             return result.user;
           }
         })
-      .then(user => console.log(user))
+        .then(
+          user => {
+            console.log(user);
+            renderContainer.innerHTML = favouritesCalls(user);            
+         }
+        )      
     }
     catch (error) {
       console.log('error', error);

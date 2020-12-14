@@ -56,9 +56,7 @@ async function formSend(e) {
 }
 
 addImage.addEventListener('change', () => {
-  uploadFile(addImage.files[0]);
-  console.log('dfghbjnkml,');
-  console.log(addImage.files[0]);
+  uploadFile(addImage.files[0]);  
   formdata.append('file', addImage.files[0]);
 });
 

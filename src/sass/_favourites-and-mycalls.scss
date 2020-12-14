@@ -1,0 +1,20 @@
+.myCalls__list {
+  @extend %list-style;
+  & img {
+    @extend %img-style;
+    height: 100%;
+  }
+  & p {
+    @extend %text-throw;
+  }
+}
+.favourites__list {
+  @extend %list-style;
+  & img {
+    @extend %img-style;
+    height: 100%;
+  }
+  & p {
+    @extend %text-throw;
+  }
+}

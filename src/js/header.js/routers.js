@@ -6,7 +6,8 @@ let auth = true;
 let startState = true;
 
 function updatePage (e) {
-    if (e.target.tagName !== "A") return
+    if (e.target.tagName !== "A")
+        return
     e.preventDefault();
     updateHistory(e);
     updatedContent();
