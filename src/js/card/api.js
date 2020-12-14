@@ -10,6 +10,7 @@ const is_hiden = document.querySelector('.card')
 import CategoriesApi from '../header.js/categories-API'
 const catApi = new CategoriesApi();
 const cat = document.querySelector('.js-header-list')
+const btnSectionIsHiden = document.querySelector('.section-btn')
 
 
 cat.addEventListener('click', clickFilter)
@@ -18,30 +19,39 @@ function clickFilter(e) {
     if (e.target.tagName !== "A") return
     
     if(e.target.getAttribute('href') === '/property'){
+        renderDiv.classList.remove('style')
      catApi.onProperty().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/electronics'){
+        renderDiv.classList.remove('style')
     catApi.onElectronics().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/free'){
+        renderDiv.classList.remove('style')
     catApi.onFree().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/recreationAndSport'){
+        renderDiv.classList.remove('style')
     catApi.onRecreationAndSport().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/sales'){
+        renderDiv.classList.remove('style')
     catApi.onSales().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/trade'){
+        renderDiv.classList.remove('style')
     catApi.onTrade().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/transport'){
+        renderDiv.classList.remove('style')
     catApi.onTransport().then(result =>render(result))};
                             
     if(e.target.getAttribute('href') === '/work'){
+        renderDiv.classList.remove('style')
     catApi.onWork().then(result =>render(result))};
 
     if(e.target.getAttribute('href') === '/businessAndServices'){
+        renderDiv.classList.remove('style')
     catApi.onbusinessAndServices().then(result =>render(result))};
                                     
 }
@@ -51,29 +61,15 @@ cleanButton2.addEventListener('click', cleanRenderCategory)
 
 cleanButton.addEventListener('click', cleanRenderCategory)
 function cleanRenderCategory(e) {
-   e.preventDefault()
+    e.preventDefault()
+    btnSectionIsHiden.classList.remove('is_hiden')
     
-     if (btn[0].children[0].classList.contains('active')) {
+     if (btn[0].children[0].classList.contains('active') || btn[1].children[0].classList.contains('active') || btn[2].children[0].classList.contains('active')) {
          renderDiv.classList.remove('render_card')
          is_hiden.classList.add('is_hiden')
-         cardRef.innerHTML = '' 
-         
-         
-
-        
+         cardRef.innerHTML = ''         
     }
-    if (btn[1].children[0].classList.contains('active')) {
-        renderDiv.classList.remove('render_card')
-        is_hiden.classList.add('is_hiden')
-        cardRef.innerHTML = '' 
-        
-    }
-    if (btn[2].children[0].classList.contains('active')) {
-        renderDiv.classList.remove('render_card')
-        is_hiden.classList.add('is_hiden')
-        cardRef.innerHTML = '' 
-       
-    }
+   
 }
 
 
@@ -81,55 +77,43 @@ removePagin.addEventListener('click', clickCategory)
 
 function clickCategory(e) {
     e.preventDefault();
-    let url = `https://callboard-backend.herokuapp.com/call?page=1`
-
-     if (btn[0].children[0].classList.contains('active')) {
-        url = `https://callboard-backend.herokuapp.com/call?page=1`
-    }
-    if (btn[1].children[0].classList.contains('active')) {
-        url = `https://callboard-backend.herokuapp.com/call?page=2`
-    }
-    if (btn[2].children[0].classList.contains('active')) {
-        url = `https://callboard-backend.herokuapp.com/call?page=3`
-    }
     
-    
-    const headers = {
-            Authorization: `Bearer ${refreshToken}`
-    }       
-    const refreshToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQwZWEyODBjOGRhNDAwMTc2ODljMjQiLCJzaWQiOiI1ZmQxMTM1OTBjOGRhNDAwMTc2ODljYTAiLCJpYXQiOjE2MDc1Mzc0OTcsImV4cCI6MTYxMDE2NTQ5N30.NoWT46_Jwpx8ohODgqzneECBSbQKtn610a3lsM27iYc';
-
-    const cardExamp = fetch(url, { headers })
-        .then(resronce => resronce.json())
-        .catch (error => console.log('idi v les'))
-   
-
-
     const query = e.target.getAttribute('class');
+    console.log(query);
     if (e.target.tagName === "A") {
-        const camelQuery = camelize(query)
-        console.log(camelQuery);
+        const camelQuery = camelize(query)       
         function camelize() {
             return query.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
                 if (+match === 0) return "";
                 return index === 0 ? match.toLowerCase() : match.toUpperCase();
             });
         }
+        let url = `https://callboard-backend.herokuapp.com/call/specific/${camelQuery}`        
 
-        cardExamp.then(resul => {console.log(resul[camelQuery]);
-            render(resul[camelQuery])
-        }) 
-        
 
+        if (e.target.getAttribute('data-class') === 'false') {
+        const cardExamp = fetch(url)
+            .then(resronce => resronce.json()).then(resul => {render(resul)}) 
+        }
+
+
+
+        if (e.target.getAttribute('data-class') === 'true') {
+            console.log('salessss');
+           url = 'https://callboard-backend.herokuapp.com/call?page=1'
+           const cardExamp = fetch(url)
+        .then(resronce => resronce.json()).then(resul => {render(resul.sales)}) 
+        }
+       
+
+   
     }
 }
- 
 
-
- function render(result) {
-    //  console.log(result);       
+ function render(result) {           
     renderDiv.classList.add('render_card')
-      cardRef.innerHTML = ''   
+     cardRef.innerHTML = ''   
+     btnSectionIsHiden.classList.add('is_hiden')
       is_hiden.classList.remove('is_hiden')  
       const card = cardTpl(result)
   cardRef.insertAdjacentHTML("beforeend", card);
