@@ -8,6 +8,8 @@ import './js/header.js/routers';
 import './js/add-modal-logic/add-modal-open';
 import './js/add-modal-logic/add-modal-close';
 import './js/card/api';
+import './js/card/card';
+import './js/card/PostFavourite';
 import './js/pagination/pagination';
 import './js/search-form/search-form.js';
 import './js/add-modal-logic/add-modal-send';
