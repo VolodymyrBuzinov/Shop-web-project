@@ -1,24 +1,24 @@
-import uploadFile from './add-modal-upload-file';
+import uploadFile from './edit-modal-upload-file';
 import refs from './refs';
-import formValidate from './add-modal-validation';
-import { handleCloseModal } from './add-modal-close';
+import formValidate from './edit-modal-validation';
+import { handleCloseModal } from './edit-modal-close';
+import { fillTheForm } from './edit-modal-open';
 
-const { form, addImage, imageList } = refs;
+const { form, editImage, imageList } = refs;
 const formdata = new FormData();
 
 form.addEventListener('submit', formSend);
-
+fillTheForm();
 async function formSend(e) {
   e.preventDefault();
 
   let error = formValidate(form);
-  const accessToken = sessionStorage.getItem('token');
 
   if (error === 0) {
     var myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${accessToken}`);
 
-    let formReq = form.querySelectorAll('._req');
+    let formReq = form.querySelectorAll('._edit');
     for (let i = 0; i < formReq.length; i++) {
       const element = formReq[i];
 
@@ -37,14 +37,17 @@ async function formSend(e) {
     }
 
     var requestOptions = {
-      method: 'POST',
+      method: 'PATCH',
       headers: myHeaders,
       body: formdata,
       redirect: 'follow',
     };
 
-    fetch('https://callboard-backend.herokuapp.com/call/', requestOptions)
-      .then(response => response.json())
+    fetch(
+      'https://callboard-backend.herokuapp.com/call/5fd643e109d4b90017824453',
+      requestOptions,
+    )
+      .then(response => response.text())
       .then(result => {
         console.log(result);
         handleCloseModal();
@@ -55,11 +58,9 @@ async function formSend(e) {
   }
 }
 
-addImage.addEventListener('change', () => {
-  uploadFile(addImage.files[0]);
-  console.log('dfghbjnkml,');
-  console.log(addImage.files[0]);
-  formdata.append('file', addImage.files[0]);
+editImage.addEventListener('change', () => {
+  uploadFile(editImage.files[0]);
+  formdata.append('file', editImage.files[0]);
 });
 
 imageList.addEventListener('click', e => {
@@ -70,3 +71,5 @@ imageList.addEventListener('click', e => {
     }
   }
 });
+
+// PATCH
