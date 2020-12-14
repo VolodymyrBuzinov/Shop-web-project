@@ -11,6 +11,7 @@ import './js/auth-modal/auth-modal';
  import './js/card/api';
  import './js/pagination/pagination';
  import "./js/search-form/search-form.js";
+ import './js/card/appendCardModal.js';
 
 
 

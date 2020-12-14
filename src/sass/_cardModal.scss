@@ -1,0 +1,297 @@
+// /* Lightbox */
+.lightbox-card-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.lightbox-card-modal.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox-card-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-card-modal__content {
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+// .lightbox.is-open .lightbox__content {
+//   transform: scale(1);
+// }
+
+// .lightbox__image {
+//   display: block;
+//   width: auto;
+//   height: auto;
+//   max-height: 100vh;
+//   max-width: 100vw;
+// }
+
+// .lightbox__button {
+//   position: absolute;
+//   top: 8px;
+//   right: 8px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 48px;
+//   height: 48px;
+//   padding: 0;
+//   margin: 0;
+//   border: none;
+//   border-radius: 50%;
+//   background-color: transparent;
+//   color: #fff;
+//   cursor: pointer;
+//   transition: background-color var(--animation-duration) var(--timing-function);
+//   outline: none;
+//   background-image: url('../images/icon-close.svg');
+//   background-position: center;
+//   background-size: 60%;
+//   background-repeat: no-repeat;
+// }
+
+// .lightbox__button:hover,
+// .lightbox__button:focus {
+//   background-color: rgba(0, 0, 0, 0.5);
+// }
+
+.goods-modal__backdrpon.is-open {
+  display: block;
+  transition: display 250ms $animation-timing;
+  pointer-events: initial;
+}
+.goods-modal__backdrpon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 767px) {
+    padding: 93px 15px;
+    overflow-y: scroll;
+  }
+
+  display: none;
+}
+
+// Модальное окно
+.goods-modal {
+  position: relative;
+  top: 4%;
+  background-color: #ffffff;
+  width: 290px;
+  min-height: 780px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  @media screen and (min-width: 768px) {
+    width: 765px;
+    min-height: 615px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 860px;
+    min-height: 670px;
+  }
+}
+
+
+.goods-modal__info {
+  position: relative;
+}
+// оранжевые стили для кнопки
+.goods-modal__button {
+  @extend %button-mobile-orange;
+  position:absolute;
+  z-index: 1;
+
+  font-family: inherit;
+  font-style: normal;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+
+  min-width: 255px;
+  height: 60px;
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+  border: 2px solid $main-color;
+}
+
+.hide-button {
+
+}
+
+.goods-modal__button-underinfo {
+  z-index: 3;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+
+// стилі для  тексту в кнопці инфор. про продавця
+.phone-title {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+// кнопка закрыть модалку
+.goods-modal__closed {
+  @extend %button-throw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 4%;
+  right: 1%;
+
+  @media screen and (min-width: 768px) {
+    top: 1%;
+  }
+
+  background-color: transparent;
+  outline: none;
+  width: 24px;
+  height: 24px;
+}
+
+// блок фото для мобилки
+.goods-modal__mob-photo {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+// img для мобилки
+.goods-modal__mob-photo-big {
+  width: 255px;
+  height: 255px;
+}
+
+// блок фото для таб. + дестоп
+.tablet-slider {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+// img для для таб. + дестоп
+.tablet-slider__big-photo {
+  // object-fit: contain;
+  margin-bottom: 10px;
+  margin-right: 38px;
+
+  @media screen and (min-width: 768px) {
+    width: 280px;
+    height: 350px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 380px;
+    height: 470px;
+  }
+}
+
+// блок слайдера для таб. + дестоп
+.slider-mini_item {
+  @media screen and (min-width: 768px) {
+    width: 52px;
+    height: 55px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 68px;
+    height: 73px;
+  }
+}
+// стили для текста
+.goods-modal__price,
+.goods-modal__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+}
+.goods-modal__title {
+  margin-bottom: 5px;
+}
+.goods-modal__price {
+  margin-top: 30px;
+}
+.goods-modal__text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.14px;
+  letter-spacing: 0.02em;
+  color: $inactive-color;
+}
+.goods-modal__discription-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: $bold-text-color;
+}
+.discription-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+// позиціювання
+.group-text {
+  display: flex;
+  padding: 0px;
+}
+.goods-modal__item {
+  display: flex;
+  margin-right: 45px;
+}
+
+.goods-modal-tablet__img-container {
+  // padding: 15px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    // flex-wrap: wrap;
+  }
+}
+// иконки
+.icon-modal {
+  margin-left: 10px;
+  fill: $inactive-color;
+}
+.icon-close {
+  width: 16px;
+  height: 16px;
+}
+
