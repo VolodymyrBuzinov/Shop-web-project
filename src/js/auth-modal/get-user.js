@@ -1,8 +1,6 @@
 import refreshToken from './refresh-token';
-
 const sid = sessionStorage.getItem('sid');
 const access = sessionStorage.getItem('token');
-
 function getUser(acces) {
     const requestOptions = {
         method: 'GET',
@@ -12,7 +10,6 @@ function getUser(acces) {
         },
         redirect: 'follow',
     };
-
     fetch("https://callboard-backend.herokuapp.com/user", requestOptions)
         .then(response => response.json())
         .then(result => {
@@ -24,11 +21,8 @@ function getUser(acces) {
         })
         .catch(error => console.log('error', error));
 }
-
 const myRoom = document.querySelector('.my-room');
-
 myRoom.addEventListener('click', ()=>{
     getUser(access)
 });
-
 

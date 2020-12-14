@@ -44,7 +44,7 @@ onbusinessAndServices () {
   .catch(error => console.log('error', error));
 }
 onWork () {   
-   return fetch(`https://callboard-backend.herokuapp.com/call/specific/${this.query}`)
+   return fetch(`https://callboard-backend.herokuapp.com/call/specific/work`)
   .then(response => response.json())
   .then(result => result)
     .catch(error => console.log('error', error));
