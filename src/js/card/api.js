@@ -79,7 +79,6 @@ function clickCategory(e) {
     e.preventDefault();
     
     const query = e.target.getAttribute('class');
-    console.log(query);
     if (e.target.tagName === "A") {
         const camelQuery = camelize(query)       
         function camelize() {
@@ -90,8 +89,9 @@ function clickCategory(e) {
         }
         let url = `https://callboard-backend.herokuapp.com/call/specific/${camelQuery}`        
 
-
+        
         if (e.target.getAttribute('data-class') === 'false') {
+           
         const cardExamp = fetch(url)
             .then(resronce => resronce.json()).then(resul => {render(resul)}) 
         }
