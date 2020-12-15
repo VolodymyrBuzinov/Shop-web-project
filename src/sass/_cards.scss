@@ -1,0 +1,42 @@
+// .card {
+//   @extend %section-style;
+
+//   &__item {
+//     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+//   }
+//   &__text {
+//     padding: 20px;
+//   }
+// }
+
+// .container {
+//   @extend %container-style;
+// }
+
+// .card__list {
+//   @extend %list-style, %list-throw;
+// }
+
+// .card__img {
+//   @extend %img-style;
+// }
+
+// .card__link {
+//   @extend %link-throw;
+// }
+
+// .double-price {
+//   @extend %text-throw;
+//   display: flex;
+//   align-items: center;
+//   text-align: start;
+// }
+
+// .card__sale {
+//   @extend %text-throw;
+//   color: $main-color;
+//   margin-left: 6px;
+// }
+// .is_hiden {
+//   display: none;
+// }

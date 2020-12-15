@@ -1,0 +1,135 @@
+<div class="edit-modal__overlay">
+  <div class="edit-modal">
+    <div class="edit-modal__content">
+      <button type="button" class="edit-modal__close-btn" data-close="true">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <h2 class="edit-form__title">Редагувати оголошення</h2>
+
+      <form action="#" class="edit-form">
+        <div class="form-items-wrapper">
+          <div class="edit-form__item">
+            <label class="edit-form__label" for="form-name">Назва товару</label>
+            <input id="form-name" type="text" class="edit-form__name input" />
+            <div class="edit-form__error-message">
+              Введіть коректну назву товару
+            </div>
+          </div>
+
+          <div class="edit-form__item">
+            <label class="edit-form__label">Фото</label>
+            <ul class="image-preview">
+              <li class="image-preview__item">
+                <div class="choose-image">
+                  <input
+                    accept=".jpg"
+                    type="file"
+                    class="choose-image__input"
+                  />
+                  <div class="image-button">+</div>
+                </div>
+              </li>
+              <li class="image-preview__item"><img src="#" alt="" /></li>
+              <li class="image-preview__item"><img src="#" alt="" /></li>
+              <li class="image-preview__item"><img src="#" alt="" /></li>
+              <li class="image-preview__item"><img src="#" alt="" /></li>
+            </ul>
+          </div>
+
+          <div class="edit-form__item">
+            <label class="edit-form__label" for="form-description"
+              >Опис товару</label
+            >
+            <textarea
+              name="description"
+              id="form-description"
+              class="edit-form__description input"
+            ></textarea>
+            <div class="edit-form__error-message">
+              Коректний опис товару - мінімум 30 символів
+            </div>
+          </div>
+
+          <div class="edit-form__item">
+            <div class="edit-form__label">Категорія товару</div>
+            <div class="select-wrapper">
+              <select name="product-category" class="edit-form__select input">
+                <option
+                  value="category"
+                  class="select-option select-option-first"
+                  selected
+                >
+                  Категорія
+                </option>
+                <option value="property" class="select-option">
+                  Нерухомість
+                </option>
+                <option value="transport" class="select-option">
+                  Транспорт
+                </option>
+                <option value="work" class="select-option">Робота</option>
+                <option value="electronics" class="select-option">
+                  Електроніка
+                </option>
+                <option value="business-and-services" class="select-option">
+                  Бізнес та послуги
+                </option>
+                <option value="recreation-and-sports" class="select-option">
+                  Відпочинок та спорт
+                </option>
+                <option value="for-free" class="select-option">
+                  Віддам безкоштовно
+                </option>
+                <option value="exchange" class="select-option">Обмін</option>
+              </select>
+              <div class="edit-form__error-message">Виберіть категорію</div>
+            </div>
+          </div>
+
+          <div class="edit-form__item">
+            <label class="edit-form__label" for="form-price">Ціна</label>
+            <input
+              type="text"
+              id="form-price"
+              name="productPrice"
+              data-source="price"
+              class="edit-form__product-price input"
+              autocomplete="off"
+              minlength="1"
+              maxlength="16"
+              placeholder="0.00 грн"
+            />
+            <div class="edit-form__error-message">
+              Введіть коректну ціну товару
+            </div>
+          </div>
+
+          <div class="edit-form__item">
+            <label class="edit-form__label" for="form-phone">Телефон</label>
+            <input
+              id="form-phone"
+              type="tel"
+              name="productPhone"
+              data-source="phone"
+              class="edit-form__product-telephone-number input"
+              placeholder="+38(8--) --- -- --"
+            />
+            <div class="edit-form__error-message">
+              Введіть коректний номер телефону
+            </div>
+          </div>
+          <div class="edit-form__item">
+            <a href="#" class="delete-advert">
+              <i class="far fa-file-excel"></i>Видалити оголошення</a
+            >
+          </div>
+        </div>
+        <div class="form-button__wrapper">
+          <button type="submit" class="edit-product-btn">Додати</button
+          ><button type="submit" class="cancel-product-btn">Відміна</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
