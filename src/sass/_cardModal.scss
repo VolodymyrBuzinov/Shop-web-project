@@ -4,9 +4,8 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 .card-modal{
-  position: absolute;
+// position: absolute;
 }
 
 .lightbox-card-modal {
@@ -174,6 +173,7 @@ box-sizing:border-box;
 }
 
 .card-modal__image-big {
+    @extend %img-style;
   display: block;
   width: 380px;
   height: 471px;

@@ -1,5 +1,5 @@
-<section class="card-modal">
-    <div class="lightbox-card-modal js-card-lightbox" data-action="data-modal">
+<section class="card-modal" id ="card-modal__id">
+    <div class="lightbox-card-modal js-card-lightbox " data-action="data-modal">
         <div class="lightbox-card-modal__overlay"></div>
 
         <div class="lightbox-card-modal__content">
@@ -11,7 +11,7 @@
                 </button>
 
                 <div class="card-modal__image-wraper">
-                    {{!-- <img class="card-modal__image-big" src="{{imageUrls}}" alt="Зображення товару"> --}}
+                <img class="card-modal__image-big" src="https://bytes.ua/wp-content/uploads/2017/08/no-image.png" alt="Зображення товару">
                     <ul class="card-modal_tumbnails-list">
                         <li class="card-modal__tumbnails-item">
                             <img src="" alt="" class="card-modal__image-tumbnail">
@@ -31,28 +31,29 @@
                     </ul>
                 </div>
                 <div class="card-modal__info-container">
-                    {{!-- <h2 class="goods-modal__title">{{title}}</h2> --}}
+                    <h2 class="goods-modal__title">Тут виводиться назва товару</h2>
                     <p class="goods-modal__text">Код товару | <span>105-С</span></p>
                     <div class="goods-modal__mob-photo">
-                        {{!-- {{#each imageUrls}} --}}
-                        {{!-- <img class="goods-modal__mob-photo-big" src="{{this}}" alt=""> --}}
-                        {{!-- {{/each}} --}}
-
+                        <!-- {{!-- {{#each imageUrls}} --}} -->
+                        <!-- {{!-- <img class="goods-modal__mob-photo-big" src="{{this}}" alt=""> --}} -->
+                        <!-- {{!-- {{/each}} --}} -->
                     </div>
 
-                    {{!-- <h2 class="goods-modal__price">{{price}}</h2> --}}
+                    <h2 class="goods-modal__price">Тут виводиться  ціна</h2>
                     <div class="goods-modal__info">
-                        <button class="goods-modal__button">Информация о продавце</button>
-                        <div class="goods-modal__button-underinfo">
-                            <p class="goods-modal__title">Ольга <span class="goods-modal__text">- на OLX c
-                                    {{registrationDate}}</span>
+                        <ul class="js-button"></ul>
+
+                        <!-- <button class="goods-modal__button">Информация о продавце</button> -->
+                        <!-- <div class="goods-modal__button-underinfo">
+                            <p class="goods-modal__title"> Ольга <span class="goods-modal__text">- на OLX c
+                                    тут дата реєстрації</span>
                             </p>
-                            {{!-- <p class="phone-title">{{phone}} </p> --}}
-                        </div>
+                            <p class="phone-title"></p> 
+                        </div> -->
                     </div>
                     <ul class="group-text">
                         <li class="goods-modal__item">
-                            <p class="goods-modal__text">В обране </p>
+                            <p class="goods-modal__text">В обране</p>
                             <svg width="18" height="18" class="icon-modal">
                                 <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                             </svg>
@@ -68,12 +69,6 @@
                     </ul>
                     <p class="goods-modal__text discription-title">Опис:</p>
                     <p class="goods-modal__discription-text" onselectstart="return false" onmousedown="return false">
-                        Давно выяснено, что
-                        при оценке дизайна и композиции читаемый
-                        текст
-                        мешает
-                        сосредоточиться. Lorem Ipsum используют
-                        потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
                     </p>
                 </div>
             </div>

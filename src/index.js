@@ -11,7 +11,9 @@ import "./sass/main.scss";
  import './js/card/api';
  import './js/pagination/pagination';
 import "./js/search-form/search-form.js";
- import './js/card/appendCardModal.js';
+
+import './js/card/appendCardModal.js';
+import './js/card/cardModalUserBtn.js';
 
 
 
