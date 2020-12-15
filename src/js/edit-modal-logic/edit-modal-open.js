@@ -1,29 +1,52 @@
 import refs from './refs';
+// import formValidate from './edit-modal-validation';
+import { handleCloseModal } from './edit-modal-close';
+import { formSend } from './edit-modal-send';
 
-const { body, editModalOverlay, selectorCategory } = refs;
+const { body, editModalOverlay, imageList, deleteCard, form } = refs;
 
-// openModalAddBtn.addEventListener('click', handleOpenModal);
-// openModalAddBtnMobile.addEventListener('click', handleOpenModal);
-// fillTheForm();
-
-function fillTheForm() {
+function fillTheForm(dataset) {
+  const { category, description, title, price, phone, id, images } = dataset;
+  // console.log(category, description, title, price, phone, id, images);
+  // if (images) {
+  //   const imagesArray = images.split(',');
+  //   if (imagesArray) {
+  //     imagesArray.map(item => {
+  //       imageList.insertAdjacentHTML(
+  //         'beforeend',
+  //         `<li class="image-preview__item"><img src="${item}" alt="" /></li>`,
+  //       );
+  //     });
+  //   }
+  // }
   const formFields = document.querySelectorAll('._edit');
   formFields.forEach(item => {
     if (item.classList.contains('_name')) {
-      item.value = 'cat';
+      item.value = title;
     } else if (item.classList.contains('_description')) {
-      item.value = 'realy good cat';
+      item.value = description;
     } else if (item.classList.contains('_phone')) {
-      item.value = '+380971100370';
+      item.value = phone;
     } else if (item.classList.contains('_category')) {
       item.children.forEach(option => {
-        if (option.value === 'work') {
+        if (option.value === category) {
           option.selected = true;
         }
       });
     } else if (item.classList.contains('_price')) {
-      item.value = '0';
+      item.value = price;
     }
+  });
+
+  handleOpenModal();
+  deleteCard.addEventListener('click', e => {
+    e.preventDefault();
+    fetchOnDeleteCard(e, id);
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    formSend(e, id);
   });
 }
 
@@ -31,29 +54,79 @@ function handleOpenModal() {
   editModalOverlay.classList.add('visible');
   body.classList.add('hidden');
 }
-function fetchCategories() {
-  fetch('https://callboard-backend.herokuapp.com/call/categories')
-    .then(response => response.json())
+
+function fetchOnDeleteCard(e, id) {
+  const accessToken = sessionStorage.getItem('token');
+  var myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${accessToken}`);
+
+  var requestOptions = {
+    method: 'DELETE',
+    headers: myHeaders,
+    redirect: 'follow',
+  };
+
+  fetch(`https://callboard-backend.herokuapp.com/call/${id}`, requestOptions)
+    .then(response => response.text())
     .then(result => {
-      let translationOfWords = {
-        property: 'Нерухомість',
-        transport: 'Транспорт',
-        work: 'Робота',
-        electronics: 'Електроніка',
-        'business and services': 'Бізнес та послуги',
-        'recreation and sport': 'Відпочинок та спорт',
-        free: 'Віддам безкоштовно',
-        trade: 'Обмін',
-      };
-      const markup = result
-        .map(
-          category =>
-            `<option value="${category}" class="select-option">${translationOfWords[category]}</option> `,
-        )
-        .join('');
-      selectorCategory.insertAdjacentHTML('beforeend', markup);
+      handleCloseModal();
+      location.reload();
     })
     .catch(error => console.log('error', error));
 }
+
+// import formValidate from './edit-modal-validation';
+// import { handleCloseModal } from './edit-modal-close';
+// import { fillTheForm } from './edit-modal-open';
+
+// const formdata = new FormData();
+
+// // form.addEventListener('submit', formSend);
+
+// async function formSend(e, id) {
+//   e.preventDefault();
+//   const accessToken = sessionStorage.getItem('token');
+//   let error = formValidate(form);
+//   console.log(id);
+//   if (error === 0) {
+//     var myHeaders = new Headers();
+//     myHeaders.append('Authorization', `Bearer ${accessToken}`);
+
+//     let formReq = form.querySelectorAll('._edit');
+//     for (let i = 0; i < formReq.length; i++) {
+//       const element = formReq[i];
+
+//       if (element.classList.contains('_name')) {
+//         formdata.append('title', `${element.value}`);
+//       } else if (element.classList.contains('_description')) {
+//         formdata.append('description', `${element.value}`);
+//       } else if (element.classList.contains('_phone')) {
+//         formdata.append('phone', `${element.value}`);
+//       } else if (element.classList.contains('_category')) {
+//         let value = element.options[element.selectedIndex].value;
+//         formdata.append('category', `${value}`);
+//       } else if (element.classList.contains('_price')) {
+//         formdata.append('price', `${element.value}`);
+//       }
+//     }
+
+//     var requestOptions = {
+//       method: 'PATCH',
+//       headers: myHeaders,
+//       body: formdata,
+//       redirect: 'follow',
+//     };
+
+//     fetch(`https://callboard-backend.herokuapp.com/call/${id}`, requestOptions)
+//       .then(response => response.text())
+//       .then(result => {
+//         console.log(result);
+//         handleCloseModal();
+//       })
+//       .catch(error => console.log('error', error));
+//   } else {
+//     alert('Заповніть будь-ласка всі поля');
+//   }
+// }
 
 export { fillTheForm };
