@@ -1,4 +1,14 @@
 // /* Lightbox */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.card-modal{
+  position: absolute;
+}
+
 .lightbox-card-modal {
   display: flex;
   align-items: center;
@@ -28,97 +38,54 @@
 }
 
 .lightbox-card-modal__content {
-  transform: scale(0.95);
-  transition: transform var(--animation-duration) var(--timing-function);
-}
-
-// .lightbox.is-open .lightbox__content {
-//   transform: scale(1);
-// }
-
-// .lightbox__image {
-//   display: block;
-//   width: auto;
-//   height: auto;
-//   max-height: 100vh;
-//   max-width: 100vw;
-// }
-
-// .lightbox__button {
-//   position: absolute;
-//   top: 8px;
-//   right: 8px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 48px;
-//   height: 48px;
-//   padding: 0;
-//   margin: 0;
-//   border: none;
-//   border-radius: 50%;
-//   background-color: transparent;
-//   color: #fff;
-//   cursor: pointer;
-//   transition: background-color var(--animation-duration) var(--timing-function);
-//   outline: none;
-//   background-image: url('../images/icon-close.svg');
-//   background-position: center;
-//   background-size: 60%;
-//   background-repeat: no-repeat;
-// }
-
-// .lightbox__button:hover,
-// .lightbox__button:focus {
-//   background-color: rgba(0, 0, 0, 0.5);
-// }
-
-.goods-modal__backdrpon.is-open {
   display: block;
-  transition: display 250ms $animation-timing;
-  pointer-events: initial;
-}
-.goods-modal__backdrpon {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  weight: 861px;
+  height: 668px;
+  margin: 0 auto 0 auto;
 
-  @media screen and (max-width: 767px) {
-    padding: 93px 15px;
-    overflow-y: scroll;
-  }
-
-  display: none;
+  z-index: 5;
+  // transform: scale(0.95);
+  // transition: transform var(--animation-duration) var(--timing-function);
+  
 }
+
 
 // Модальное окно
-.goods-modal {
+.card-modal {
   position: relative;
-  top: 4%;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  padding-top: 54px;
+  // top: 4%;
   background-color: #ffffff;
-  width: 290px;
-  min-height: 780px;
-
+  width: 861px;
+  height: 668px;
+ 
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
-  @media screen and (min-width: 768px) {
-    width: 765px;
-    min-height: 615px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 860px;
-    min-height: 670px;
-  }
+  // padding: 15px;
+  // @media screen and (min-width: 768px) {
+  //   width: 765px;
+  //   min-height: 615px;
+  // }
+  // @media screen and (min-width: 1200px) {
+  //   width: 860px;
+  //   min-height: 670px;
+  // }
 }
 
-
-.goods-modal__info {
-  position: relative;
+.card-modal__info-container {
+  display: block;
+  margin-left: 38px;
+  width:300px;//420
 }
+
+// .goods-modal__info {
+//   position: relative;
+// }
+
+
 // оранжевые стили для кнопки
 .goods-modal__button {
   @extend %button-mobile-orange;
@@ -151,12 +118,12 @@
 
 .goods-modal__button-underinfo {
   z-index: 3;
-  padding-top: 30px;
+  padding-top: 37px;
   padding-bottom: 20px;
 }
 
 
-// стилі для  тексту в кнопці инфор. про продавця
+// // стилі для  тексту в кнопці инфор. про продавця
 .phone-title {
   font-style: normal;
   font-weight: 300;
@@ -165,75 +132,152 @@
   letter-spacing: 0.02em;
 }
 
-// кнопка закрыть модалку
-.goods-modal__closed {
+.card-modal__close-btn {
   @extend %button-throw;
+    position: absolute;
+    cursor: pointer;
+    // background-color: #F5F6FB;
+    width: 24px;
+    height: 24px;
+    padding: 25px;
+   
+    top: 0px;
+    right: 25px;
+    background-color: #fff;
+    border: none;
+
+    @media screen and (max-width: 767px){
+        top: 15px;
+        right: 15px;
+    }
+
+    .card-modal__icon-close{
+        height: 24px;
+        width: 24px;
+    }
+
+    &:hover .card-modal__icon-close,
+    &:focus .card-modal__icon-close{
+        fill: #000;
+        border: none;
+        border-color: #ffffff;
+    }
+}
+
+.card-modal__image-wraper {
+  display: block;
+
+  width: 380px;
+
+  // height: 554px;
+  margin-left: 60px;
+}
+
+.card-modal__image-big {
+  display: block;
+  width: 380px;
+  height: 471px;
+  padding: 0px;
+  margin: 0px 0px 5px 0px;
+
+  background-color: #F5F6FB;
+  border: none;
+}
+
+.card-modal_tumbnails-list{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
 
-  position: absolute;
-  top: 4%;
-  right: 1%;
-
-  @media screen and (min-width: 768px) {
-    top: 1%;
-  }
-
-  background-color: transparent;
-  outline: none;
-  width: 24px;
-  height: 24px;
+  list-style-type: none;
 }
 
-// блок фото для мобилки
-.goods-modal__mob-photo {
-  @media screen and (min-width: 768px) {
-    display: none;
+.card-modal__tumbnails-item {
+  margin: 5px;
+  width: 68px;
+  height: 73px;
+  background-color: #F5F6FB;
+  &:first-child {
+    margin-left: 0px;
+  }
+  &:last-child {
+    margin-right: 0px;
   }
 }
 
-// img для мобилки
-.goods-modal__mob-photo-big {
-  width: 255px;
-  height: 255px;
-}
+// .card-modal__icon-close {
+//   height: 24px;
+//   weight: 24px;
+// }
 
-// блок фото для таб. + дестоп
-.tablet-slider {
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-}
-// img для для таб. + дестоп
-.tablet-slider__big-photo {
-  // object-fit: contain;
-  margin-bottom: 10px;
-  margin-right: 38px;
+//   @extend %button-throw;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-  @media screen and (min-width: 768px) {
-    width: 280px;
-    height: 350px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 380px;
-    height: 470px;
-  }
-}
+//   position: absolute;
+//   top: 4%;
+//   right: 1%;
 
-// блок слайдера для таб. + дестоп
-.slider-mini_item {
-  @media screen and (min-width: 768px) {
-    width: 52px;
-    height: 55px;
-  }
+//   @media screen and (min-width: 768px) {
+//     top: 1%;
+//   }
 
-  @media screen and (min-width: 1200px) {
-    width: 68px;
-    height: 73px;
-  }
-}
-// стили для текста
+//   background-color: transparent;
+//   outline: none;
+//   width: 24px;
+//   height: 24px;
+// }
+
+// // блок фото для мобилки
+// .goods-modal__mob-photo {
+//   @media screen and (min-width: 768px) {
+//     display: none;
+//   }
+// }
+
+// // img для мобилки
+// .goods-modal__mob-photo-big {
+//   width: 255px;
+//   height: 255px;
+// }
+
+// // блок фото для таб. + дестоп
+// .tablet-slider {
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
+// // img для для таб. + дестоп
+// .tablet-slider__big-photo {
+//   // object-fit: contain;
+//   margin-bottom: 10px;
+//   margin-right: 38px;
+
+//   @media screen and (min-width: 768px) {
+//     width: 280px;
+//     height: 350px;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     width: 380px;
+//     height: 470px;
+//   }
+// }
+
+// // блок слайдера для таб. + дестоп
+// .slider-mini_item {
+//   @media screen and (min-width: 768px) {
+//     width: 52px;
+//     height: 55px;
+//   }
+
+//   @media screen and (min-width: 1200px) {
+//     width: 68px;
+//     height: 73px;
+//   }
+// }
+// // стили для текста
 .goods-modal__price,
 .goods-modal__title {
   font-style: normal;
@@ -256,6 +300,7 @@
   letter-spacing: 0.02em;
   color: $inactive-color;
 }
+
 .goods-modal__discription-text {
   font-style: normal;
   font-weight: 300;
@@ -268,30 +313,30 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
-// позиціювання
+// // позиціювання
 .group-text {
   display: flex;
+  width: 340px;
+  margin-top: 30px;
   padding: 0px;
 }
 .goods-modal__item {
   display: flex;
+  align-items: baseline;
   margin-right: 45px;
 }
 
-.goods-modal-tablet__img-container {
-  // padding: 15px;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    // flex-wrap: wrap;
-  }
-}
-// иконки
-.icon-modal {
-  margin-left: 10px;
-  fill: $inactive-color;
-}
-.icon-close {
-  width: 16px;
-  height: 16px;
-}
+// .goods-modal-tablet__img-container {
+//   // padding: 15px;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//     // flex-wrap: wrap;
+//   }
+// }
+// // иконки
+// .icon-modal {
+//   margin-left: 10px;
+//   fill: $inactive-color;
+// }
+
 

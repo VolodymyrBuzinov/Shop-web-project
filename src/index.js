@@ -1,6 +1,6 @@
 
 import "./sass/main.scss";
-import './js/auth-modal/auth-modal';
+ import './js/auth-modal/auth-modal';
  import './images/sprite/symbol-defs.svg';
  import './js/header.js/menu';
  import './js/header.js/categories-API';
@@ -10,8 +10,10 @@ import './js/auth-modal/auth-modal';
  import './js/add-modal-logic/add-modal-close';
  import './js/card/api';
  import './js/pagination/pagination';
- import "./js/search-form/search-form.js";
+import "./js/search-form/search-form.js";
  import './js/card/appendCardModal.js';
+
+
 
 
 

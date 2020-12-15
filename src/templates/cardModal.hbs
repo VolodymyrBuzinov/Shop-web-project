@@ -1,42 +1,52 @@
-
+<section class="card-modal">
 <div class="lightbox-card-modal js-card-lightbox" data-action="data-modal">
     <div class="lightbox-card-modal__overlay"></div>
 
     <div class="lightbox-card-modal__content">    
-    <div class="goods-modal">
-        <button class="goods-modal__closed">
-            <svg class="icon-close">
-                <use href="../images/sprite/symbol-defs.svg#icon-close-24px-1"></use>
-            </svg>
-        </button>
-        <div class="goods-modal-tablet__img-container">
-            <div class="tablet-slider">
-                <img class="tablet-slider__big-photo" src="{{imageUrls}}" alt="">
-                <ul class="slider-mini__container">
-                    {{#each imageUrls}}
-                    <li class="slider-mini_item">
-                        <img class="slider-mini_item" src="{{this}}" alt="">
+        <div class="card-modal">
+            <button class="card-modal__close-btn" type = "button">
+                <svg class="card-modal__icon-close">
+                    <use href="../images/sprite/symbol-defs.svg#icon-close-24px-1"></use>
+                </svg>
+            </button>
+                
+            <div class="card-modal__image-wraper">
+                {{!-- <img class="card-modal__image-big" src="{{imageUrls}}" alt="Зображення товару"> --}}
+                <ul class="card-modal_tumbnails-list">
+                    <li class ="card-modal__tumbnails-item">
+                        <img src="" alt="" class="card-modal__image-tumbnail">
                     </li>
-                    {{/each}}
+                    <li class="card-modal__tumbnails-item">
+                        <img src="" alt="" class="card-modal__image-tumbnail">
+                    </li>
+                    <li class="card-modal__tumbnails-item">
+                        <img src="" alt="" class="card-modal__image-tumbnail">
+                    </li>
+                    <li class="card-modal__tumbnails-item">
+                        <img src="" alt="" class="card-modal__image-tumbnail">
+                    </li>
+                    <li class="card-modal__tumbnails-item">
+                        <img src="" alt="" class="card-modal__image-tumbnail">
+                    </li>
                 </ul>
             </div>
-    
-            <div class="goods-modal-tablet__info-container">
-                <h2 class="goods-modal__title">{{title}}</h2>
+            <div class="card-modal__info-container">
+                {{!-- <h2 class="goods-modal__title">{{title}}</h2> --}}
                 <p class="goods-modal__text">Код товару | <span>105-С</span></p>
                 <div class="goods-modal__mob-photo">
-                    {{#each imageUrls}}
-                    <img class="goods-modal__mob-photo-big" src="{{this}}" alt="">
-                    {{/each}}
-    
+                    {{!-- {{#each imageUrls}} --}}
+                    {{!-- <img class="goods-modal__mob-photo-big" src="{{this}}" alt=""> --}}
+                    {{!-- {{/each}} --}}
+            
                 </div>
-    
-                <h2 class="goods-modal__price">{{price}}</h2>
+            
+                {{!-- <h2 class="goods-modal__price">{{price}}</h2> --}}
                 <div class="goods-modal__info">
                     <button class="goods-modal__button">Информация о продавце</button>
-                    <div class="goods-modal__button-underinfo is-open">
-                        <p class="goods-modal__title">Ольга <span class="goods-modal__text">- на OLX c {{registrationDate}}</span></p>
-                        <p class="phone-title">{{phone}} </p>
+                    <div class="goods-modal__button-underinfo">
+                        <p class="goods-modal__title">Ольга <span class="goods-modal__text">- на OLX c {{registrationDate}}</span>
+                        </p>
+                        {{!-- <p class="phone-title">{{phone}} </p> --}}
                     </div>
                 </div>
                 <ul class="group-text">
@@ -45,18 +55,19 @@
                         <svg width="18" height="18" class="icon-modal">
                             <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                         </svg>
-    
+            
                     </li>
                     <li class="goods-modal__item">
                         <p class="goods-modal__text">Поділитися</p>
                         <svg width="18" height="18" class="icon-modal">
                             <use href="../images/sprite/symbol-defs.svg#icon-share-1-1"></use>
                         </svg>
-    
+            
                     </li>
                 </ul>
                 <p class="goods-modal__text discription-title">Опис:</p>
-                <p class="goods-modal__discription-text" onselectstart="return false" onmousedown="return false">Давно выяснено, что при оценке дизайна и композиции читаемый
+                <p class="goods-modal__discription-text" onselectstart="return false" onmousedown="return false">Давно выяснено, что
+                    при оценке дизайна и композиции читаемый
                     текст
                     мешает
                     сосредоточиться. Lorem Ipsum используют
@@ -66,7 +77,6 @@
         </div>
     </div>
 
-    </div>
-
     <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
 </div>
+</section>
