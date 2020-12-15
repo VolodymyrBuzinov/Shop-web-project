@@ -25,6 +25,7 @@ function openCardModal(e) {
             
             document.querySelector('.goods-modal__title').textContent = e.target.closest('.card__item').getAttribute('data-title');
             document.querySelector('.phone-title').textContent = e.target.closest('.card__item').getAttribute('data-phone');
+            document.querySelector('.card-modal__insert').textContent = `- на OLX з 12 груд. 2020р.`; //${порахована дата від реєстрації}
             document.querySelector('.goods-modal__discription-text').textContent = e.target.closest('.card__item').getAttribute('data-description');
             document.querySelector('.goods-modal__price').textContent = `${e.target.closest('.card__item').getAttribute('data-price')} грн`;
             // document.querySelector('.goods-modal__price').textContent = "textContent працює";
