@@ -22,8 +22,12 @@ function openCardModal(e) {
             e.target.closest('.card__item').getAttribute('data-userid'),
         e.target.closest('.card__item').getAttribute('data-phone'));
         try {
+            
+            document.querySelector('.goods-modal__title').textContent = e.target.closest('.card__item').getAttribute('data-title');
             document.querySelector('.phone-title').textContent = e.target.closest('.card__item').getAttribute('data-phone');
             document.querySelector('.goods-modal__discription-text').textContent = e.target.closest('.card__item').getAttribute('data-description');
+            document.querySelector('.goods-modal__price').textContent = `${e.target.closest('.card__item').getAttribute('data-price')} грн`;
+            // document.querySelector('.goods-modal__price').textContent = "textContent працює";
         } catch (error) {
             console.log("Проблема з вставкою",error)
         }
@@ -31,7 +35,6 @@ function openCardModal(e) {
         e.preventDefault();
         refs.mainParent.classList.toggle('is-open');
         document.querySelector('body').removeEventListener('click', openCardModal);
-        // cardImageFromItemInPagination = e.target.getAttribute('src');
         document.querySelector('.card-modal__image-big').setAttribute('src', e.target.getAttribute('src'));
        try {
             // window.onload = function (e) {
@@ -44,12 +47,7 @@ function openCardModal(e) {
     }
 }
 
-// document.querySelector('body').
-
-    // refs.close.addEventListener('click', closeCardModal);
-    // refs.closeSVG.addEventListener('click', closeCardModal);
-
- function closeCardModal(e) { 
+function closeCardModal(e) { 
     // if (e.target.tagName === "SECTION") {
     e.preventDefault();
     refs.mainParent.classList.toggle('is-open');
@@ -59,27 +57,6 @@ function openCardModal(e) {
     //  refs.closeSVG.addEventListener('click', closeCardModal);
     // }
 }
-
-
-// refs.contactInfo.addEventListener('click', openInfoByClick);
-
-// function openInfoByClick (e) {
-//     refs.contactInfo.classList.toggle('.hide-button');
-//     refs.contactInfo.classList.toggle('.goods-modal__button');
-// }
-
-// const closeCardModal = (e) => {
-//     window.removeEventListener('keydown', onEscKeyPress);
-//     if(e.target === e.currentTarget) {
-//         refs.parent.classList.remove('is-open');
-//     }
-// }
-//Закрытие модалки
-
-    // refs.close.addEventListener('click', toggleModal);
-    // refs.parent.addEventListener('click', toggleModal);
-    // refs.overlay.addEventListener('click', toggleModal);
-    // refs.closeByClickOnOverlay.addEventListener('click', clearSrc);
 
     //close modal by ESC
     window.addEventListener("keypress", e => {

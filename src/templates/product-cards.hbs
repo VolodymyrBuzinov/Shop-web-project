@@ -1,5 +1,15 @@
 {{#each this}}
-<li>
+<li 
+    class="card__item card__item category-cards__item slider-item swiper-slide"
+    {{!-- data-category={{category}}  --}}
+    {{!-- data-description={{description}}  --}}
+    {{!-- data-phone={{phone}} --}}
+    {{!-- data-userID={{userId}} --}}
+    {{!-- data-title={{title}} --}}
+    {{!-- data-price={{price}} --}}
+    {{!-- data-images={{imageUrls}} --}}
+    {{!-- data-card-id={{id}} --}}
+    >
     {{#each imageUrls}}
     <img class="found-img" src={{this}} alt="{{title}}">
     {{/each}}

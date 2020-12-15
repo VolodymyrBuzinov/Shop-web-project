@@ -27,8 +27,15 @@
                 <!-- Сюда нужно добавлять карточки категории -->
 
                 <li class="card__item card__item category-cards__item slider-item swiper-slide"
-                    data-category={{category}} data-description={{description}} data-phone={{phone}}
-                    data-userID={{userId}}>
+                    data-category={{category}} 
+                    data-description={{description}} 
+                    data-phone={{phone}}
+                    data-userID={{userId}} 
+                    data-title={{title}} 
+                    data-price={{price}}
+                    data-images={{imageUrls}}
+                    data-card-id={{id}}
+                    >
                     <a class="card__link" href="">
                         <div class="card__img-wraper">
                             {{#each imageUrls}}<img class="card__img" src="{{this}}" alt="image">{{/each}}
