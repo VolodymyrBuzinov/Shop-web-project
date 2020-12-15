@@ -2,17 +2,21 @@
   @extend %list-style;
   & img {
     @extend %img-style;
-    height: 100%;
+    max-width: 100%;
+    height: 90%;
+    pointer-events: none;
   }
   & p {
     @extend %text-throw;
+    pointer-events: none;
   }
 }
 .favourites__list {
   @extend %list-style;
   & img {
     @extend %img-style;
-    height: 100%;
+    max-width: 100%;
+    height: 90%;
   }
   & p {
     @extend %text-throw;

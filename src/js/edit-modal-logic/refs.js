@@ -7,4 +7,5 @@ export default {
   closeModalBtn: document.querySelector('.edit-modal__close-btn'),
   selectorCategory: document.querySelector('.edit-form__select'),
   cancelProductBtn: document.querySelector('.cancel-product-btn'),
+  deleteCard: document.querySelector('.delete-advert'),
 };
