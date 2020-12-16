@@ -26,12 +26,12 @@
                 <li class="card__item card__item category-cards__item slider-item swiper-slide"
                     data-category={{category}} data-description={{description}} data-phone={{phone}}
                     data-userID={{userId}}>
-                    <a class="card__link" href="">
+                    <a class="card__link" target="_blank" href="{{imageUrls}}">
                         <div class="card__img-wraper">
                             <img class="card__img" src="{{imageUrls}}" alt="image">
                         </div>
                     </a>
-                    <svg class="card__svg">
+                    <svg class="card__svg" id="svg">
                         <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                     </svg>
                     <svg class="card__svg2">

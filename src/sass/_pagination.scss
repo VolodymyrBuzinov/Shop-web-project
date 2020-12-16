@@ -1,17 +1,15 @@
-
 .card {
   @extend %section-style;
 
   &__item {
-    
-    
     height: 100% !important;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
     background-color: lavender;
     // width: 295px;
     @media screen and (min-width: 768px) {
-    height: 350px;}
+      height: 350px;
     }
+  }
   &__text {
     padding: 20px;
   }
@@ -47,7 +45,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-.card__img-wraper{
+.card__img-wraper {
   height: 275px;
 }
 .card__img {
@@ -58,7 +56,7 @@
 .card__link {
   @extend %link-throw;
   padding: 0;
-  & :not(:first-child){
+  & :not(:first-child) {
     display: none;
   }
   height: 275px;
@@ -81,12 +79,12 @@
 
 //   &__item{
 //       box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
-//       background-color: lavender;  
-      
+//       background-color: lavender;
+
 //   }
-  
+
 //   &__text{
-//      padding: 20px; 
+//      padding: 20px;
 //   }
 //   &__img-wraper{
 //       position: relative;
@@ -108,46 +106,45 @@
 //   &__sale{
 //       visibility: hidden;
 //   }
-  
+
 // }
-.card__title{
+.card__title {
   margin: 0px !important;
-  
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.07em;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.07em;
 }
 
-.is_hiden{
+.is_hiden {
   display: none;
 }
-.render_card{
+.render_card {
   display: none;
 }
-.double-price{
+.double-price {
   @extend %text-throw;
   display: flex;
   align-items: center;
   text-align: start;
 }
-.card__price{
+.card__price {
   margin: 0px;
   font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 16px;
-letter-spacing: 0.04em;
-
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
 }
-.card__sale{
+.card__sale {
   padding-top: 20px;
   @extend %text-throw;
-  color: $main-color; 
-  margin-left: 6px; 
+  color: $main-color;
+  margin-left: 6px;
 }
 .pagination-card-all {
   & :nth-child(n + 5) {
@@ -162,31 +159,30 @@ letter-spacing: 0.04em;
     }
   }
 }
-.span_card{
+.span_card {
   & :nth-child(n + 3) {
     display: none;
   }
-  & :nth-child(2){
+  & :nth-child(2) {
     font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
-letter-spacing: 0.06em;
-text-decoration-line: underline;
-color: $main-color;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-decoration-line: underline;
+    color: $main-color;
   }
-  & :first-child{
-    
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 15px;
-letter-spacing: 0.09em;
-text-transform: uppercase;
+  & :first-child {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
   }
-} 
+}
 .section-pagination {
   @extend %container-style;
   padding: 0px 15px;
@@ -272,13 +268,13 @@ html {
   height: 100%;
 }
 
-body {  
+body {
   /* Растягиваем body по высоте html */
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
-.title{
+.title {
   display: none;
 }
 .section-footer {
@@ -339,37 +335,27 @@ body {
     padding-bottom: 60px;
   }
 }
-.category-cards{
+.category-cards {
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    & :nth-child(n + 5){
+    & :nth-child(n + 5) {
       display: none;
     }
   }
 }
-// .namePrice {
-//   height: 75px;
-//   & p {
-//     @extend %text-throw;
-//   }
-//   padding: 20px 0px;
-// }
-// .pagination-price {
-//   font-family: Roboto;
-//   font-style: normal;
-//   font-weight: bold;
-//   font-size: 14px;
-//   line-height: 16px;
-//   letter-spacing: 0.04em;
-// }
-// .pagination-name-card {
-//   margin-bottom: 5px !important;
-//   font-family: Roboto;
-//   font-style: normal;
-//   font-weight: 300;
-//   font-size: 12px;
-//   line-height: 14px;
-//   letter-spacing: 0.07em;
-// }
-// .render_card {
-//   display: none;
-// }
+
+.card__item:hover img {
+  height: 360px;
+}
+.card__item:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card__item:hover svg {
+  fill: red;
+  opacity: 1;
+  cursor: pointer;
+}
+.card__svg {
+  opacity: 0;
+}
