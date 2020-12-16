@@ -74,21 +74,22 @@ onProperty () {
   .then(result => result)
   .catch(error => console.log('error', error));
   }
-//   inCabinet() {
-//    var myHeaders = new Headers();
-// myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQyN2FlYjAwMzE5MzAwMTdlOTE3OTUiLCJzaWQiOiI1ZmQ0YzY4Yzg1ZGRhMjAwMTcyYmQ1YTQiLCJpYXQiOjE2MDc3Nzk5ODAsImV4cCI6MTYwNzc4MzU4MH0.xygu1Ehj2RUpfBtRX4_Y58PyxDt38rHh-rtv2S7wa78");
+  inCabinet() {    
+    var myHeaders = new Headers();
+    let storageToken = sessionStorage.getItem('token');
+myHeaders.append("Authorization", storageToken);
 
-// var requestOptions = {
-//   method: 'GET',
-//   headers: myHeaders,
-//   redirect: 'follow'
-// };
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
 
-// fetch("https://callboard-backend.herokuapp.com/call/favourites", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-//   }
+return fetch("https://callboard-backend.herokuapp.com/user", requestOptions)
+  .then(response => response.text())
+  .then(result => result)
+  .catch(error => console.log('error', error));
+  }
 onError () {
   error({
     title: 'Неправильный адрес страницы!!!',

@@ -10,4 +10,5 @@ export default {
     logoutButton: document.querySelector('.js-logout-button'),
     myCabinetButton: document.querySelector('.js-my-cabinet__button'),
     addCalls: document.querySelector('.js-search-container__button'),
+    headerContainer: document.querySelector('.js-header-container'),
 }

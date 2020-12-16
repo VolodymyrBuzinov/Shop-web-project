@@ -14,8 +14,6 @@ import './js/add-modal-logic/add-modal-send';
 import './js/edit-modal-logic/edit-modal-close';
 import './js/edit-modal-logic/edit-modal-open';
 import './js/edit-modal-logic/edit-modal-send';
-const link = document.querySelector('.header-list__link')
-console.log(link['href'] = '/vasya');
 
 
 

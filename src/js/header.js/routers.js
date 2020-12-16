@@ -39,8 +39,9 @@ function updatedContent() {
 window.onpopstate = function(event) {
     updatedContent();
 };
-
+links.headerContainer.addEventListener('click', updatePage);
 links.navList.addEventListener('click', updatePage);
+
 window.addEventListener('load', updatedContent());
 
 
