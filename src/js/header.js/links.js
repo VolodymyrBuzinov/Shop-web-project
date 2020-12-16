@@ -11,4 +11,14 @@ export default {
     myCabinetButton: document.querySelector('.js-my-cabinet__button'),
     addCalls: document.querySelector('.js-search-container__button'),
     headerContainer: document.querySelector('.js-header-container'),
+    myCabinetSection: document.querySelector('.js-calls-favourites'),
+    pagginationSection: document.querySelector('.section-pagination'),
+    cardSection: document.querySelector('.card'),
+    pagButtons: document.querySelector('.section-btn'),
+    clearButton: document.querySelector('.header-nav__clear__button'),
+    listAuthButton: document.querySelector('.js-header-list__auth'),
+    navMyCabinetButton: document.querySelector('.js-header-list__myCabinet'),
+    navLogoutButton: document.querySelector('.js-nav-logout-button'),
+    navContainer: document.querySelector('.js-header-nav__container'),
+    mobileAddButton: document.querySelector('.header-add_button')
 }

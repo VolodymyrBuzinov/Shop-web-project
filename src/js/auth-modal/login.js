@@ -5,7 +5,7 @@ import { fillTheForm } from '../edit-modal-logic/edit-modal-open';
 import slider from '../category/slider';
 import links from '../header.js/links'
 
-const renderContainer = document.querySelector('.pagination-div');
+const renderSection = document.querySelector('.js-calls-favourites');
 
 export default async function login(log) {
   const requestOptions = {
@@ -45,13 +45,18 @@ export default async function login(log) {
           return result.user;
         }
       })
-      .then(user => {             
-        renderContainer.innerHTML = favouritesCalls(user);
+      .then(user => {            
+        
         if (sessionStorage['token']) {
+          links.myCabinetSection.innerHTML = favouritesCalls(user);         
           links.myCabinetButton.style.display = 'flex';
           links.regButton.style.display = 'none';
           links.logoutButton.style.display = 'flex';
-          links.addCalls.style.display = 'flex';          
+          links.addCalls.style.display = 'flex';
+          links.navMyCabinetButton.style.display = 'flex';
+          links.navLogoutButton.style.opacity = 1;
+          links.listAuthButton.style.display = 'none'; 
+          links.mobileAddButton.style.display = 'flex';
         }
         const login = function (evt) {
           if (evt) {
@@ -63,15 +68,20 @@ export default async function login(log) {
             headers: myHeaders, 
                                  }
             fetch("https://callboard-backend.herokuapp.com/auth/logout", requestOptions)
+            links.myCabinetSection.classList.add('is-hidden')
+             links.pagginationSection.classList.remove('is-hidden')
+            links.cardSection.classList.remove('is-hidden')
+             links.pagButtons.classList.remove('is-hidden')
              links.myCabinetButton.style.display = 'none';
              links.regButton.style.display = 'flex';
              links.logoutButton.style.display = 'none';
-             links.addCalls.style.display = 'none';  
+            links.addCalls.style.display = 'none';  
+            links.mobileAddButton.style.display = 'none';
             sessionStorage.clear();            
           }
         }
         // const myCabinet = function (evt) {
-        //   renderContainer.innerHTML = favouritesCalls(user);
+        //   renderSection.innerHTML = favouritesCalls(user);
         // }
         links.logoutButton.addEventListener('click', login)       
         // links.myCabinetButton.addEventListener('click', myCabinet)

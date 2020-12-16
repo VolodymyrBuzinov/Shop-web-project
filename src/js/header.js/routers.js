@@ -41,7 +41,41 @@ window.onpopstate = function(event) {
 };
 links.headerContainer.addEventListener('click', updatePage);
 links.navList.addEventListener('click', updatePage);
+// links.listAuthButton.addEventListener('click', evt => {
+//     if (evt) {
 
+//     }
+// })
+const logout = function (evt) {
+          if (evt) {
+            var myHeaders = new Headers();
+            let token = sessionStorage.getItem('token');
+            myHeaders.append("Authorization", `Bearer ${token}`);  
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders, 
+                                 }
+            fetch("https://callboard-backend.herokuapp.com/auth/logout", requestOptions)
+            links.myCabinetSection.classList.add('is-hidden')
+             links.pagginationSection.classList.remove('is-hidden')
+            // links.cardSection.classList.remove('is-hidden')
+             links.pagButtons.classList.remove('is-hidden')
+             links.myCabinetButton.style.display = 'none';
+             links.regButton.style.display = 'flex';
+             links.logoutButton.style.display = 'none';
+            links.addCalls.style.display = 'none';        
+            links.navMyCabinetButton.style.display = 'none';
+          links.navLogoutButton.style.opacity = 0;
+              links.listAuthButton.style.display = 'flex';
+              sessionStorage.clear();
+          }
+        }
 window.addEventListener('load', updatedContent());
-
-
+links.navLogoutButton.addEventListener('click', logout);
+links.logoutButton.addEventListener('click', logout)
+links.navMyCabinetButton.addEventListener('click', catApi.inCabinet)
+links.clearButton.addEventListener('click', evt => {
+    if (evt) {
+        catApi.onHome();
+    }
+ })

@@ -4,4 +4,3 @@ import './login';
 import './error-message';
 import './regsub';
 import './refresh-token';
-import './get-user';
