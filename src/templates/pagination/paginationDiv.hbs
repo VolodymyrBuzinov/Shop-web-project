@@ -23,23 +23,20 @@
         <div class="slider-container swiper-container">
             <ul class="category-cards slider-track swiper-wrapper">
                 {{#each this}}
-
-                <!-- Сюда нужно добавлять карточки категории -->
-
                 <li class="card__item card__item category-cards__item slider-item swiper-slide"
                     data-category={{category}} data-description={{description}} data-phone={{phone}}
                     data-userID={{userId}}>
                     <a class="card__link" href="">
                         <div class="card__img-wraper">
-                            {{#each imageUrls}}<img class="card__img" src="{{this}}" alt="image">{{/each}}
-                            <svg class="card__svg">
-                                <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
-                            </svg>
-                            <svg class="card__svg2">
-                                <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
-                            </svg>
+                            <img class="card__img" src="{{imageUrls}}" alt="image">
                         </div>
                     </a>
+                    <svg class="card__svg">
+                        <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
+                    </svg>
+                    <svg class="card__svg2">
+                        <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
+                    </svg>
 
                     <div class="card__text">
                         <h3 class="card__title">{{title}}</h3>
@@ -50,7 +47,6 @@
                     </div>
 
                 </li>
-                <!--  -->
                 {{/each}}
             </ul>
         </div>
