@@ -1,5 +1,6 @@
 .myCalls__list {
   @extend %list-style;
+
   & img {
     @extend %img-style;
     max-width: 100%;

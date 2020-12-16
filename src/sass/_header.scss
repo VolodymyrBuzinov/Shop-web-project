@@ -152,24 +152,72 @@
     @media screen and (min-width: 768px) {
       margin-right: 20px;
     }
-    @media screen and (min-width: 1280px) {
-      display: none;
-    }
   }
   &__button {
     @extend %button-tablet-orange;
+    display: none;
   }
 }
 .registry-button {
-  @extend %button-desktop-white;
+  @extend %button-throw;
+  display: block;
+  padding: 30px;
+  text-align: center;
+  color: $bold-text-color;
+  background-color: $white-color;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 26px;
+  transition: $animation-timing;
+  border-right: 1px solid #e2e3e5;
+  &:hover {
+    color: $main-color;
+  }
   & span {
     @media screen and (max-width: 1279px) {
       display: none;
     }
+  }
+}
+.reg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logout-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 25px 20px 25px 20px;
+  border-left: 1px solid #e2e3e5;
+  &__icon {
+    width: 20px;
+    height: 20px;
+    transition: $animation-timing;
+    &:hover {
+      fill: $main-color;
+    }
+  }
+}
+.my-cabinet__button {
+  @extend %button-throw;
+  display: none;
+  color: $bold-text-color;
+  background-color: $white-color;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  transition: $animation-timing;
+  & span {
+    pointer-events: none;
+  }
+  &:hover {
+    color: $main-color;
+    fill: $main-color;
   }
 }
 .header-menu__search {
@@ -336,7 +384,6 @@
   }
 }
 .header-menu__search,
-.search-container__icon,
 .header-menu__burger,
 .header-menu__close {
   transition: $animation-timing;
