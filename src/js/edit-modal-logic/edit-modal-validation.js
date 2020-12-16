@@ -14,8 +14,8 @@ export default function (form) {
 
   for (let i = 0; i < formReq.length; i++) {
     const element = formReq[i];
-    console.log(element);
-    console.log(element.nextElementSibling);
+    // console.log(element);
+    // console.log(element.nextElementSibling);
     element.nextElementSibling.classList.remove('visible');
 
     if (element.classList.contains('_category')) {
