@@ -1,20 +1,19 @@
+{{!-- ​{{#each this}}
+<li class="card__item" data-category={{category}} data-description={{description}} data-phone={{phone}}
+    data-userID={{userId}} data-id={{_id}}>
+
+    <div class="card__img-wraper">
+        <img class="card__img" src="{{imageUrls}}" alt="image">
+        <svg class="card__svg card__svg__check" data-id={{_id}}>
+            <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
+        </svg>
+
+    </div> --}}
 
 
-    
-​{{#each this}}
-<li class="card__item" data-category = {{category}} data-description = {{description}} data-phone = {{phone}} data-userID = {{userId}} data-id = {{_id}}>
-       
-            <div class="card__img-wraper">
-            <img class="card__img" src="{{imageUrls}}" alt="image">
-                <svg class="card__svg card__svg__check" data-id = {{_id}}><use href="../images/sprite/symbol-defs.svg#icon-heart"></use></svg>
-                
-            </div>
-        
-    
-
-{{#each this}}
+    {{#each this}}
 <li class="card__item card__item category-cards__item slider-item swiper-slide" data-category={{category}}
-    data-description={{description}} data-phone={{phone}} data-userID={{userId}}>
+    data-description={{description}} data-id={{_id}} data-phone={{phone}} data-userID={{userId}}>
     <a class="card__link" href="">
         <div class="card__img-wraper">
             <img class="card__img" src="{{imageUrls}}" alt="image">
