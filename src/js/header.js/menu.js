@@ -9,17 +9,23 @@ links.burgerButton.addEventListener('click', evt => {
 })
 links.closeButton.addEventListener('click', evt => {
     if (evt) {
-        links.nav.classList.remove('is-open')
-        links.header.style.overflow = 'hidden';
-        links.headerMenu.style.opacity = 1;        
+        menuIsClosed();        
     }
 })
 links.navContainer.addEventListener('click', evt => {
     if (evt) {
-        links.nav.classList.remove('is-open')
-        links.header.style.overflow = 'hidden';
-        links.headerMenu.style.opacity = 1;        
+       menuIsClosed();       
     }
 })
 
+document.addEventListener('keyup', e => {
+  if (e.code === 'Escape') {
+      menuIsClosed();
+  }
+});
 
+const menuIsClosed = function () {
+links.nav.classList.remove('is-open')
+    links.header.style.overflow = 'hidden';
+    links.headerMenu.style.opacity = 1; 
+}
