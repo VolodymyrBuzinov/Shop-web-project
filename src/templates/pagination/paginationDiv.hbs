@@ -10,7 +10,7 @@
             <!-- Здесь нужно рендерить название категории  -->
             <div class="span_card">
                 {{#each this}}
-                <span class="category-description__name">{{category}}</span>
+                <span class="category-description__name">{{#if isOnSale}} Sales {{else}}{{category}}{{/if}}</span>
 
                 <a href="/{{category}}" data-class="{{isOnSale}}" class="{{category}}"> Дивитися
                     всі</a>
@@ -23,7 +23,7 @@
         <div class="slider-container swiper-container">
             <ul class="category-cards slider-track swiper-wrapper">
                 {{#each this}}
-                <li class="card__item card__item category-cards__item slider-item swiper-slide"
+                <li class="card__items category-cards__item slider-item swiper-slide"
                     data-category={{category}} data-description={{description}} data-phone={{phone}}
                     data-userID={{userId}}>
                     <a class="card__link" target="_blank" href="{{imageUrls}}">
@@ -34,14 +34,14 @@
                     <svg class="card__svg" id="svg">
                         <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                     </svg>
-                    <svg class="card__svg2">
+                    {{!-- <svg class="card__svg2">
                         <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
-                    </svg>
+                    </svg> --}}
 
                     <div class="card__text">
                         <h3 class="card__title">{{title}}</h3>
                         <div class="double-price">
-                            <p class="card__sale">{{oldPrice}}</p>
+                            <p class="card__sale ">{{oldPrice}}</p>
                             <p class="card__price">{{price}} грн</p>
                         </div>
                     </div>

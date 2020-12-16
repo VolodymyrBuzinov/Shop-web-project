@@ -99,7 +99,6 @@ function clickCategory(e) {
 
 
         if (e.target.getAttribute('data-class') === 'true') {
-            console.log('salessss');
            url = 'https://callboard-backend.herokuapp.com/call?page=1'
            const cardExamp = fetch(url)
         .then(resronce => resronce.json()).then(resul => {render(resul.sales)}) 
