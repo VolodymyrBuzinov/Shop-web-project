@@ -18,9 +18,10 @@ box-sizing:border-box;
   left: 0;
   width: 100vw;
   // height: 100vh;
+  transition: opacity var(--animation-duration) var(--timing-function);
+
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--animation-duration) var(--timing-function);
   &.is-open {
     opacity: 1;
     pointer-events: initial;
@@ -45,8 +46,7 @@ box-sizing:border-box;
 
   z-index: 5;
   transform: scale(0.95);
-  transition: transform var(--animation-duration) var(--timing-function);
-  
+  transition: transform var(--animation-duration) var(--timing-function); 
 }
 
  /* 
@@ -267,10 +267,10 @@ box-sizing:border-box;
 
   border: 2px solid $main-color;
 
-  &:active {
-    opacity: 0;
-    pointer-events: none;
-  }
+  // &:active {
+  //   opacity: 0;
+  //   pointer-events: none;
+  // }
 
   @media screen and (min-width: 768px) {
     margin-top: 40px;
@@ -322,11 +322,21 @@ box-sizing:border-box;
   letter-spacing: 0.02em;
 }
 
-.group-text {
+.card-modal__like-share {
   display: flex;
-  width: 340px;
+  justify-content: space-between;
+  width: 217px;
   margin-bottom: 30px;
   padding: 0px;
+
+  // font-family: Roboto;
+  // font-style: normal;
+  // font-weight: 300;
+  // font-size: 12px;
+  // line-height: 14px;
+  // letter-spacing: 0.02em;
+
+color: #878686;
 }
 
 .goods-modal__item {

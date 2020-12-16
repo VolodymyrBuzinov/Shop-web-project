@@ -30,6 +30,7 @@ export default async function login(log) {
             sessionStorage.setItem('token', result.accessToken);
             sessionStorage.setItem('sid', result.sid);
             sessionStorage.setItem('refresh', result.refreshToken);
+            sessionStorage.setItem('favourites', result.favourites);
            
 
             document.getElementById('form').reset();
