@@ -35,7 +35,7 @@ function openCardModal(e) {
         
         e.preventDefault();
 
-        refs.mainParent.classList.toggle('is-open');
+        refs.parent.classList.toggle('is-open');
         refs.body.removeEventListener('click', openCardModal);
         refs.bigImage.setAttribute('src', e.target.getAttribute('src'));
         
@@ -51,14 +51,14 @@ function openCardModal(e) {
 
 document.onkeydown = (e) => {
     if (e.keyCode === 27) {
-        refs.mainParent.classList.toggle('is-open');
+        refs.parent.classList.remove('is-open');
     }
 }
 
 function closeCardModal(e) { 
     // e.stopPropagation();
     e.preventDefault();
-    refs.mainParent.classList.toggle('is-open');
+    refs.parent.classList.toggle('is-open');
     
     console.log("Спрацював event listener на кнопці закривання модалки карточки", e.target);
 }

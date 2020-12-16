@@ -1,6 +1,6 @@
 export default {
     body:        document.querySelector('body'),
-    mainParent:  document.querySelector('.lightbox-card-modal'),
+    parent:      document.querySelector('.lightbox-card-modal'),
     phone:       document.querySelector('.phone-title'),
     infoButton:  document.querySelector('.card-modal__insert'),
     description: document.querySelector('.goods-modal__discription-text'),
