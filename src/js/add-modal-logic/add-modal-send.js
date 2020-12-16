@@ -4,7 +4,6 @@ import formValidate from './add-modal-validation';
 import { handleCloseModal } from './add-modal-close';
 
 const { form, addImage, imageList } = refs;
-const formdata = new FormData();
 
 form.addEventListener('submit', formSend);
 
@@ -15,26 +14,9 @@ async function formSend(e) {
   const accessToken = sessionStorage.getItem('token');
 
   if (error === 0) {
+    const formdata = new FormData(form);
     var myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${accessToken}`);
-
-    let formReq = form.querySelectorAll('._req');
-    for (let i = 0; i < formReq.length; i++) {
-      const element = formReq[i];
-
-      if (element.classList.contains('_name')) {
-        formdata.append('title', `${element.value}`);
-      } else if (element.classList.contains('_description')) {
-        formdata.append('description', `${element.value}`);
-      } else if (element.classList.contains('_phone')) {
-        formdata.append('phone', `${element.value}`);
-      } else if (element.classList.contains('_category')) {
-        let value = element.options[element.selectedIndex].value;
-        formdata.append('category', `${value}`);
-      } else if (element.classList.contains('_price')) {
-        formdata.append('price', `${element.value}`);
-      }
-    }
 
     var requestOptions = {
       method: 'POST',
@@ -56,8 +38,7 @@ async function formSend(e) {
 }
 
 addImage.addEventListener('change', () => {
-  uploadFile(addImage.files[0]);  
-  formdata.append('file', addImage.files[0]);
+  uploadFile(addImage.files[0]);
 });
 
 imageList.addEventListener('click', e => {

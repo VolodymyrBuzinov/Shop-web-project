@@ -28,5 +28,3 @@ import './js/edit-modal-logic/edit-modal-send';
 
 
 
-
-

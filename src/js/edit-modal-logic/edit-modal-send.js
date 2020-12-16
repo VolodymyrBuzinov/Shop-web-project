@@ -2,18 +2,18 @@ import uploadFile from './edit-modal-upload-file';
 import refs from './refs';
 import formValidate from './edit-modal-validation';
 import { handleCloseModal } from './edit-modal-close';
-import { fillTheForm } from './edit-modal-open';
+// import { fillTheForm } from './edit-modal-open';
 
 const { form, editImage, imageList } = refs;
 const formdata = new FormData();
 
-form.addEventListener('submit', formSend);
-fillTheForm();
-async function formSend(e) {
+// form.addEventListener('submit', formSend);
+
+async function formSend(e, id) {
   e.preventDefault();
-
+  const accessToken = sessionStorage.getItem('token');
   let error = formValidate(form);
-
+  console.log(id);
   if (error === 0) {
     var myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${accessToken}`);
@@ -43,10 +43,7 @@ async function formSend(e) {
       redirect: 'follow',
     };
 
-    fetch(
-      'https://callboard-backend.herokuapp.com/call/5fd643e109d4b90017824453',
-      requestOptions,
-    )
+    fetch(`https://callboard-backend.herokuapp.com/call/${id}`, requestOptions)
       .then(response => response.text())
       .then(result => {
         console.log(result);
@@ -60,6 +57,7 @@ async function formSend(e) {
 
 editImage.addEventListener('change', () => {
   uploadFile(editImage.files[0]);
+  console.log(editImage.files);
   formdata.append('file', editImage.files[0]);
 });
 
@@ -71,5 +69,4 @@ imageList.addEventListener('click', e => {
     }
   }
 });
-
-// PATCH
+export { formSend };

@@ -14,6 +14,12 @@ links.closeButton.addEventListener('click', evt => {
         links.headerMenu.style.opacity = 1;        
     }
 })
-
+links.navContainer.addEventListener('click', evt => {
+    if (evt) {
+        links.nav.classList.remove('is-open')
+        links.header.style.overflow = 'hidden';
+        links.headerMenu.style.opacity = 1;        
+    }
+})
 
 

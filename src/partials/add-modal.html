@@ -15,6 +15,7 @@
             <label class="add-form__label" for="form-name">Назва товару</label>
             <div class="input-wrapper">
               <input
+                name="title"
                 id="form-name"
                 type="text"
                 class="add-form__name _req _name input"
@@ -32,6 +33,7 @@
                 <li class="image-preview__item">
                   <div class="choose-image">
                     <input
+                      name="file"
                       accept=".jpg"
                       type="file"
                       class="choose-image__input add-image"
@@ -57,7 +59,7 @@
                 class="add-form__description _description _req input"
               ></textarea>
               <div class="add-form__error-message">
-                Коректний опис товару - мінімум 30 символів
+                Коректний опис товару - мінімум 5 символів
               </div>
             </div>
           </div>
@@ -66,7 +68,7 @@
             <div class="add-form__label">Категорія товару</div>
             <div class="select-wrapper">
               <select
-                name="product-category"
+                name="category"
                 class="add-form__select _category _req input"
               >
                 <option
@@ -86,7 +88,7 @@
               <input
                 type="text"
                 id="form-price"
-                name="productPrice"
+                name="price"
                 data-source="price"
                 class="add-form__product-price _price _req input"
                 autocomplete="off"
@@ -109,7 +111,7 @@
               <input
                 id="form-phone"
                 type="tel"
-                name="productPhone"
+                name="phone"
                 data-source="phone"
                 class="add-form__product-telephone-number _phone _req input"
                 placeholder="+38(0--) --- -- --"

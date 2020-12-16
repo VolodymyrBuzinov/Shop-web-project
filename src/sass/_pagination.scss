@@ -30,9 +30,9 @@
     width: 12px;
     height: 12px;
   }
-  &__sale {
-    visibility: hidden;
-  }
+  // &__sale {
+  //   visibility: hidden;
+  // }
 }
 
 .container {
@@ -54,7 +54,6 @@
 }
 
 .card__link {
-  pointer-events: none;
   @extend %link-throw;
   padding: 0;
   & :not(:first-child) {
@@ -70,45 +69,6 @@
   text-align: start;
 }
 
-// .card__sale {
-//   @extend %text-throw;
-//   color: $main-color;
-//   margin-left: 6px;
-// }
-// .card {
-//   @extend %section-style;
-
-//   &__item{
-//       box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
-//       background-color: lavender;
-
-//   }
-
-//   &__text{
-//      padding: 20px;
-//   }
-//   &__img-wraper{
-//       position: relative;
-//   }
-//   &__svg{
-//       position: absolute;
-//       right: 20px;
-//       top: 20px;
-//       width: 12px;
-//       height: 12px;
-//   }
-//   &__svg2{
-//       position: absolute;
-//       right: 20px;
-//       bottom: 20px;
-//       width: 12px;
-//       height: 12px;
-//   }
-//   &__sale{
-//       visibility: hidden;
-//   }
-
-// }
 .card__title {
   margin: 0px !important;
 
@@ -142,7 +102,8 @@
   letter-spacing: 0.04em;
 }
 .card__sale {
-  padding-top: 20px;
+  text-decoration: line-through;
+  margin-right: 20px;
   @extend %text-throw;
   color: $main-color;
   margin-left: 6px;
@@ -343,30 +304,28 @@ body {
     }
   }
 }
-// .namePrice {
-//   height: 75px;
-//   & p {
-//     @extend %text-throw;
-//   }
-//   padding: 20px 0px;
+
+// .card__item:hover img {
+//   height: 360px;
 // }
-// .pagination-price {
-//   font-family: Roboto;
-//   font-style: normal;
-//   font-weight: bold;
-//   font-size: 14px;
-//   line-height: 16px;
-//   letter-spacing: 0.04em;
-// }
-// .pagination-name-card {
-//   margin-bottom: 5px !important;
-//   font-family: Roboto;
-//   font-style: normal;
-//   font-weight: 300;
-//   font-size: 12px;
-//   line-height: 14px;
-//   letter-spacing: 0.07em;
-// }
-// .render_card {
-//   display: none;
-// }
+
+.card__svg {
+  opacity: 0;
+}
+.card__item:hover::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  display: block;
+  content: '';
+}
+.card__item:hover svg {
+  z-index: 2;
+  fill: white;
+  opacity: 1;
+  cursor: pointer;
+}
