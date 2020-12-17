@@ -1,10 +1,13 @@
 .myCalls__list {
   @extend %list-style;
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   & img {
     @extend %img-style;
     width: 100%;
-    height: 90%;
+    height: 100%;
     pointer-events: none;
   }
   & p {
@@ -14,10 +17,13 @@
 }
 .favourites__list {
   @extend %list-style;
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
   & img {
     @extend %img-style;
     width: 100%;
-    height: 90%;
+    height: 100%;
   }
   & p {
     @extend %text-throw;
@@ -32,4 +38,90 @@
 }
 .is-hidden {
   display: none;
+}
+.calls-favourites__img-container {
+  position: relative;
+  height: 275px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      opacity: 1;
+      pointer-events: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    height: 290px;
+  }
+}
+.calls-favourites__text-container {
+  padding: 20px;
+  & p:first-child {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.07em;
+    color: $inactive-color;
+  }
+  & p:last-child {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: $bold-text-color;
+  }
+  & p:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+.calls-favourites__heart__icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 18px;
+  right: 18px;
+  border-radius: 20px;
+  transition: $animation-timing;
+  fill: $white-color;
+  &:hover {
+    fill: $main-color;
+  }
+}
+.calls-favourites__orange__heart__icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 18px;
+  right: 18px;
+  border-radius: 20px;
+  transition: $animation-timing;
+  fill: $main-color;
+  &:hover {
+    fill: $white-color;
+  }
+}
+.calls__description__container,
+.favourites__description__container {
+  padding: 16px;
+}
+
+.calls__title,
+.favourites__title {
+  @extend %text-throw;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $bold-text-color;
 }

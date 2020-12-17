@@ -17,6 +17,7 @@ import './js/edit-modal-logic/edit-modal-close';
 import './js/edit-modal-logic/edit-modal-open';
 import './js/edit-modal-logic/edit-modal-send';
 import './js/card-modal/appendCardModal';
+import './js/favourites-calls/favourites-calls'
 
 
 
