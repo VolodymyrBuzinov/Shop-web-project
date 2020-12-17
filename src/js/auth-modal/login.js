@@ -48,7 +48,7 @@ export default async function login(log) {
       .then(user => {            
         
         if (sessionStorage['token']) {
-          links.myCabinetSection.innerHTML = favouritesCalls(user);         
+          links.myCabinetSection.innerHTML = favouritesCalls(user);            
           links.myCabinetButton.style.display = 'flex';
           links.regButton.style.display = 'none';
           links.logoutButton.style.display = 'flex';
@@ -57,7 +57,7 @@ export default async function login(log) {
           links.navLogoutButton.style.opacity = 1;
           links.listAuthButton.style.display = 'none';           
         }
-        const login = function (evt) {
+        const logout = function (evt) {
           if (evt) {
             var myHeaders = new Headers();
             let token = sessionStorage.getItem('token');
@@ -81,7 +81,7 @@ export default async function login(log) {
         // const myCabinet = function (evt) {
         //   renderSection.innerHTML = favouritesCalls(user);
         // }
-        links.logoutButton.addEventListener('click', login)       
+        links.logoutButton.addEventListener('click', logout)       
         // links.myCabinetButton.addEventListener('click', myCabinet)
         const myCallsContainer = document.querySelector('.myCalls__list');        
         myCallsContainer.addEventListener('click', e => {

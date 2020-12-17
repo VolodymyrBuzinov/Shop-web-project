@@ -2,11 +2,11 @@
     <div class="calls__description__container">
         <h3 class="calls__title">Мої оголошення</h3>
     </div>
-    <ul class="myCalls__list">
+    <ul class="myCalls__list js-myCalls__list">
 
-        {{#each calls}}<li class="myCalls__item" data-category="{{category}}" data-description="{{description}}"
-            data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}"
-            data-images="{{imageUrls}}" data-price="{{price}}">
+        {{#each calls}}<li class="myCalls__item js-myCalls__item" data-category="{{category}}"
+            data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+            data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
             <div class="calls-favourites__img-container">{{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
                 <svg class="calls-favourites__heart__icon">
                     <use href="../images/sprite/symbol-defs.svg#icon-heart-orange"></use>
@@ -21,13 +21,13 @@
     <div class="favourites__description__container">
         <h3 class="favourites__title">Обране</h3>
     </div>
-    <ul class="favourites__list">
-        {{#each favourites}}<li class="myCalls__item" data-category="{{category}}" data-description="{{description}}"
-            data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}"
-            data-images="{{imageUrls}}" data-price="{{price}}">
+    <ul class="favourites__list js-favourites__list">
+        {{#each favourites}}<li class="myFavourites__item js-myFavourites__item" data-category="{{category}}"
+            data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+            data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
             <div class="calls-favourites__img-container">{{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
                 <svg class="calls-favourites__orange__heart__icon">
-                    <use href="../images/sprite/symbol-defs.svg#icon-heart-orange"></use>
+                    <use href="../images/sprite/symbol-defs.svg#icon-heart-orange" data-id="{{_id}}"></use>
                 </svg>
             </div>
             <div class="calls-favourites__text-container">

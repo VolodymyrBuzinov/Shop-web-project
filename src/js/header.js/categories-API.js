@@ -140,23 +140,48 @@ var requestOptions = {
     .then(result => {
       console.log(result);
       if (sessionStorage['token']) {
-          links.myCabinetSection.innerHTML = favouritesCalls(result);
+        links.myCabinetSection.innerHTML = favouritesCalls(result);        
           links.myCabinetSection.classList.remove('is-hidden')
           links.pagginationSection.classList.add('is-hidden')
           links.cardSection.classList.add('is-hidden')
           links.pagButtons.classList.add('is-hidden')              
-        }        
-        // const myCabinet = function (evt) {
-        //   renderSection.innerHTML = favouritesCalls(user);
-        // }
+      }
+      // Удаление с избранных
+    const myFavouritesList = document.querySelector('.js-favourites__list')
+      const deleteFavourites = function (evt) {      
+      if (evt.target.tagName === "use") {      
+    const accessToken = sessionStorage.getItem('token');
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${accessToken}`);
+        const id = evt.target.dataset.id;
+        console.log(id);
+var requestOptions = {
+ method: 'DELETE',
+ headers: myHeaders,
+ redirect: 'follow'
+};
+      fetch(`https://callboard-backend.herokuapp.com/call/favourite/${id}`, requestOptions)
+       .then(response => response.json())
+        .then(result => {  
+         success({
+    title: 'Видалено з обраного, перезавантажте сторінку!',
+    delay: 1500
+  })
+          return result
+        })
+       .catch(error => console.log('error', error));
+    } 
+    }
       
-      
-        // links.myCabinetButton.addEventListener('click', myCabinet)
-      const myCallsContainer = document.querySelector('.myCalls__list'); 
-      
-        myCallsContainer.addEventListener('click', e => {
+      myFavouritesList.addEventListener('click', deleteFavourites);
+
+      // Заполнение формы для измененния
+      const myCallsContainer = document.querySelector('.myCalls__list');
+      myCallsContainer.addEventListener('click', e => {
           fillTheForm(e.target.dataset);
         });
+            
+        
       return result;
     })
   .catch(error => console.log('error', error));
@@ -164,7 +189,7 @@ var requestOptions = {
 }
 onError () {
   error({
-    title: 'Неправильный адрес страницы!!!',
+    title: 'Невірна адреса сторінки!!!',
     delay: 1500
   })
   }    

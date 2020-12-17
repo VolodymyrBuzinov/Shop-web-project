@@ -20,5 +20,8 @@ export default {
     navMyCabinetButton: document.querySelector('.js-header-list__myCabinet'),
     navLogoutButton: document.querySelector('.js-nav-logout-button'),
     navContainer: document.querySelector('.js-header-nav__container'),
-    mobileAddButton: document.querySelector('.header-add_button')
+    mobileAddButton: document.querySelector('.header-add_button'),    
+    
+    // callsItem: document.querySelectorAll('.js-myCalls__item'),
+    // favouritesItem: document.querySelectorAll('.js-favourites__list'),
 }
