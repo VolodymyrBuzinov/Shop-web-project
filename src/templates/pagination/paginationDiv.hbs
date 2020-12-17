@@ -23,26 +23,25 @@
         <div class="slider-container swiper-container">
             <ul class="category-cards slider-track swiper-wrapper">
                 {{#each this}}
-                <li class="card__items category-cards__item slider-item swiper-slide"
-                    data-category={{category}} data-description={{description}} data-phone={{phone}}
-                    data-userID={{userId}}>
-                    <a class="card__link" target="_blank" href="{{imageUrls}}">
-                        <div class="card__img-wraper">
-                            <img class="card__img" src="{{imageUrls}}" alt="image">
+                <li class="card__items category-cards__item slider-item swiper-slide" data-category={{category}}
+                    data-description={{description}} data-phone={{phone}} data-userID={{userId}}>
+                    <a class="card__linkp" target="_blank" href="{{imageUrls}}">
+                        <div class="card__img-wraperp ">
+                            <img class="card__imgp" src="{{imageUrls}}" alt="image">
                         </div>
                     </a>
-                    <svg class="card__svg" id="svg">
+                    <svg class="card__svgp" id="svg">
                         <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                     </svg>
                     {{!-- <svg class="card__svg2">
                         <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
                     </svg> --}}
 
-                    <div class="card__text">
-                        <h3 class="card__title">{{title}}</h3>
-                        <div class="double-price">
-                            <p class="card__sale ">{{oldPrice}}</p>
-                            <p class="card__price">{{price}} грн</p>
+                    <div class="card__textp">
+                        <h3 class="card__titlep">{{title}}</h3>
+                        <div class="card__double-pricep">
+                            <p class="card__salep {{#if isOnSale}} activp {{/if}}">{{oldPrice}}</p>
+                            <p class="card__pricep" {{#if isOnSale}} style="color: #FF6B09" {{/if}}>{{price}} грн</p>
                         </div>
                     </div>
 

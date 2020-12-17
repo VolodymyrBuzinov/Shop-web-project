@@ -1,0 +1,35 @@
+.myCalls__list {
+  @extend %list-style;
+
+  & img {
+    @extend %img-style;
+    width: 100%;
+    height: 90%;
+    pointer-events: none;
+  }
+  & p {
+    @extend %text-throw;
+    pointer-events: none;
+  }
+}
+.favourites__list {
+  @extend %list-style;
+  & img {
+    @extend %img-style;
+    width: 100%;
+    height: 90%;
+  }
+  & p {
+    @extend %text-throw;
+  }
+}
+.calls-favourites {
+  @extend %section-style;
+  // display: none;
+}
+.calls-favourites__container {
+  @extend %container-style;
+}
+.is-hidden {
+  display: none;
+}

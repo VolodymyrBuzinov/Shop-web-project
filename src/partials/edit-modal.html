@@ -2,59 +2,70 @@
   <div class="edit-modal">
     <div class="edit-modal__content">
       <button type="button" class="edit-modal__close-btn" data-close="true">
-        <i class="fas fa-times"></i>
+        <svg class="edit-modal__close-icon">
+          <use href="../images/sprite/symbol-defs.svg#icon-close-24px-1"></use>
+        </svg>
       </button>
 
       <h2 class="edit-form__title">Редагувати оголошення</h2>
 
-      <form action="#" class="edit-form">
+      <form action="#" class="edit-form js-edit-form">
         <div class="form-items-wrapper">
           <div class="edit-form__item">
-            <label class="edit-form__label" for="form-name">Назва товару</label>
-            <input id="form-name" type="text" class="edit-form__name input" />
-            <div class="edit-form__error-message">
-              Введіть коректну назву товару
-            </div>
+            <label class="edit-form__label" for="edit-form-name"
+              >Назва товару</label
+            >
+            <input
+              value=""
+              id="edit-form-name"
+              type="text"
+              class="edit-form__name _name _edit input"
+              disabled
+            />
           </div>
 
           <div class="edit-form__item">
             <label class="edit-form__label">Фото</label>
-            <ul class="image-preview">
-              <li class="image-preview__item">
-                <div class="choose-image">
-                  <input
-                    accept=".jpg"
-                    type="file"
-                    class="choose-image__input"
-                  />
-                  <div class="image-button">+</div>
-                </div>
-              </li>
-              <li class="image-preview__item"><img src="#" alt="" /></li>
-              <li class="image-preview__item"><img src="#" alt="" /></li>
-              <li class="image-preview__item"><img src="#" alt="" /></li>
-              <li class="image-preview__item"><img src="#" alt="" /></li>
-            </ul>
+            <div class="input-wrapper">
+              <ul class="image-preview__edit _req">
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input
+                      value=""
+                      accept=".jpg"
+                      type="file"
+                      class="choose-image__input edit-image _edit"
+                    />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="add-form__error-message">
+                Потрібно добавити від 1-го до 5-ти фото
+              </div>
+            </div>
           </div>
 
           <div class="edit-form__item">
-            <label class="edit-form__label" for="form-description"
+            <label class="edit-form__label" for="edit-form-description"
               >Опис товару</label
             >
             <textarea
               name="description"
-              id="form-description"
-              class="edit-form__description input"
+              id="edit-form-description"
+              class="edit-form__description _description input _edit"
+              disabled
             ></textarea>
-            <div class="edit-form__error-message">
-              Коректний опис товару - мінімум 30 символів
-            </div>
           </div>
 
           <div class="edit-form__item">
             <div class="edit-form__label">Категорія товару</div>
             <div class="select-wrapper">
-              <select name="product-category" class="edit-form__select input">
+              <select
+                name="product-category"
+                class="edit-form__select _req _category _edit input"
+                disabled
+              >
                 <option
                   value="category"
                   class="select-option select-option-first"
@@ -88,46 +99,56 @@
           </div>
 
           <div class="edit-form__item">
-            <label class="edit-form__label" for="form-price">Ціна</label>
-            <input
-              type="text"
-              id="form-price"
-              name="productPrice"
-              data-source="price"
-              class="edit-form__product-price input"
-              autocomplete="off"
-              minlength="1"
-              maxlength="16"
-              placeholder="0.00 грн"
-            />
-            <div class="edit-form__error-message">
-              Введіть коректну ціну товару
+            <label class="edit-form__label" for="edit-form-price">Ціна</label>
+            <div class="input-wrapper">
+              <input
+                value=""
+                type="text"
+                id="edit-form-price"
+                name="productPrice"
+                data-source="price"
+                class="edit-form__product-price _req _price _edit input"
+                autocomplete="off"
+                minlength="1"
+                maxlength="16"
+                placeholder="0.00 грн"
+              />
+              <div class="edit-form__error-message">
+                Введіть коректну ціну товару
+              </div>
+              <div class="edit-form__error-message _error-price">
+                Ціна для цїєї категорії має бути 0
+              </div>
             </div>
           </div>
 
           <div class="edit-form__item">
-            <label class="edit-form__label" for="form-phone">Телефон</label>
+            <label class="edit-form__label" for="edit-form-phone"
+              >Телефон</label
+            >
             <input
-              id="form-phone"
+              value=""
+              id="edit-form-phone"
               type="tel"
               name="productPhone"
               data-source="phone"
-              class="edit-form__product-telephone-number input"
-              placeholder="+38(8--) --- -- --"
+              class="edit-form__product-telephone-number _edit _phone input"
+              placeholder="+38(0--) --- -- --"
+              disabled
             />
-            <div class="edit-form__error-message">
-              Введіть коректний номер телефону
-            </div>
           </div>
           <div class="edit-form__item">
             <a href="#" class="delete-advert">
-              <i class="far fa-file-excel"></i>Видалити оголошення</a
+              <svg class="delete-icon">
+                <use href="../images/sprite/symbol-defs.svg#icon-file-1"></use>
+              </svg>
+              Видалити оголошення</a
             >
           </div>
         </div>
         <div class="form-button__wrapper">
           <button type="submit" class="edit-product-btn">Додати</button
-          ><button type="submit" class="cancel-product-btn">Відміна</button>
+          ><button type="button" class="cancel-product-btn">Відміна</button>
         </div>
       </form>
     </div>

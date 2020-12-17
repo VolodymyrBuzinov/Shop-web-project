@@ -14,6 +14,7 @@ export default function uploadFile(file) {
   if (file.size > 3 * 1024 * 1024) {
     alert('Фото має бути мньше ніж 3 МБ.');
   }
+
   let reader = new FileReader();
   reader.onload = function (e) {
     imageList.insertAdjacentHTML(

@@ -1,5 +1,9 @@
-.card {
+.container {
+  @extend %container-style;
+}
 
+/////////  Отображение карточки  ///////////
+.card {
   &__items {
     height: 100% !important;
     box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
@@ -9,97 +13,110 @@
       height: 350px;
     }
   }
-  
-  &__img-wraper {
-    position: relative;
+  &__textp {
+    padding: 20px;
   }
-  &__svg {
+  &__img-wraperp {
+    position: relative;
+    height: 275px;
+  }
+  &__svgp {
     position: absolute;
     right: 20px;
     top: 20px;
     width: 12px;
     height: 12px;
-  }  
-}
+  }
+  &__imgp {
+    height: 100%;
+    @extend %img-style;
+  }
+  &__linkp {
+    @extend %link-throw;
+    padding: 0;
+    & :not(:first-child) {
+      display: none;
+    }
+    height: 275px;
+  }
+  &__titlep {
+    margin: 0px 0px 4px 0px !important;
 
-.container {
-  @extend %container-style;
-}
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.07em;
+  }
+  &__items:nth-child(n + 3) {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__pricep {
+    margin: 0px 10px 0px 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+  }
 
-.card__list {
-  @extend %list-style, %list-throw;
-  @media screen and (min-width: 1280px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  &__items:hover::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 275px;
+    display: block;
+    content: '';
+  }
+  &__items svg {
+    z-index: 2;
+    fill: white;
+    cursor: pointer;
+  }
+  &__double-pricep {
+    height: 16px;
+    @extend %text-throw;
+    display: flex;
+    align-items: center;
+    text-align: start;
   }
 }
-.card__img-wraper {
-  height: 275px;
-}
-.card__img {
-  height: 100%;
-  @extend %img-style;
-}
-
-.card__link {
-  @extend %link-throw;
-  padding: 0;
-  & :not(:first-child) {
-    display: none;
-  }
-  height: 275px;
-}
-
-.double-price {
-  @extend %text-throw;
-  display: flex;
-  align-items: center;
-  text-align: start;
-}
-
-.card__title {
-  margin: 0px !important;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.07em;
-}
-.card__items:nth-child(n + 3){
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-}
-
-
-.is_hiden {
-  display: none;
-}
-.render_card {
-  display: none;
-}
-.double-price {
-  @extend %text-throw;
-  display: flex;
-  align-items: center;
-  text-align: start;
-}
-.card__price {
-  margin: 0px;
+.activp {
+  text-decoration: line-through black;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.04em;
+
+  color: #bbbbbb;
+  margin: 0px 10px 0px 0px;
 }
-.card__sale {
-  text-decoration: line-through;
-  @extend %text-throw;
-  color: $main-color;
-  // margin-right: 10px;
+// .category-cards {
+//   @media screen and (min-width: 320px) and (max-width: 767px) {
+//     & :nth-child(n + 5) {
+//       display: none;
+//     }
+//   }
+// }
+
+.is_hiden {
+  display: none;
 }
+
+///////// Пагинация категорий  //////////
+.render_card {
+  display: none;
+}
+
 .pagination-card-all {
   & :nth-child(n + 5) {
     display: none;
@@ -180,13 +197,21 @@
     min-width: 285px;
   }
 }
-// .img1 {
-//   height: 100%;
-//   @extend %img-style;
-// }
+
 .pagination-card-block {
   margin-bottom: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+////////// Кнопки перехода по страницам пагинации ///////////
+
+.section-btn {
+  background-color: #f5f6fb;
+  @media screen and (min-width: 320px) {
+    padding-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-bottom: 60px;
+  }
 }
 .pagination-btn {
   display: flex;
@@ -218,6 +243,9 @@
     background-color: $bold-text-color;
   }
 }
+
+//////////  Footer  /////////////
+
 html {
   height: 100%;
 }
@@ -256,7 +284,7 @@ body {
   font-size: 16px !important;
   font-weight: bold !important;
 }
-.head {
+.heard {
   color: #ff6b09;
   font-size: 16px !important;
 }
@@ -279,43 +307,4 @@ body {
     line-height: 15px;
     letter-spacing: 0.03em;
   }
-}
-.section-btn {
-  background-color: #f5f6fb;
-  @media screen and (min-width: 320px) {
-    padding-bottom: 30px;
-  }
-  @media screen and (min-width: 768px) {
-    padding-bottom: 60px;
-  }
-}
-.category-cards {
-  // @media screen and (max-width: 320px){
-  //   & :nth-child(n + 3) {
-  //     display: none;
-  //   }
-  // }
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    & :nth-child(n + 5) {
-      display: none;
-    }
-  }
-}
-
-
-.card__items:hover::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100%;
-  height: 275px;
-  display: block;
-  content: '';
-}
-.card__items svg {
-  z-index: 2;
-  fill: white;
-  cursor: pointer;
 }

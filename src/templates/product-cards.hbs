@@ -1,5 +1,6 @@
 {{#each this}}
-<li>
+<li data-category="{{category}}" data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}"
+    data-id="{{_id}}" data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
     {{#each imageUrls}}
     <img class="found-img" src={{this}} alt="{{title}}">
     {{/each}}

@@ -1,17 +1,22 @@
-<div class="myCalls-and-favourites__container">
+<div class="calls-favourites__container">
     <ul class="myCalls__list">
-        <li class="myCalls__item" data-title="{{title}}">
-            {{#each imgUrls}}<img src="{{this}}" alt="">{{/each}}
-            <p>{{decription}}</p>
+
+        {{#each calls}}<li class="myCalls__item" data-category="{{category}}" data-description="{{description}}"
+            data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}"
+            data-images="{{imageUrls}}" data-price="{{price}}">
+            {{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
+            <p>{{title}}</p>
             <p>{{price}}</p>
-        </li>
+        </li>{{/each}}
     </ul>
 
     <ul class="favourites__list">
-        <li class="favourites__item">
-            {{#each imgUrls}}<img src="{{this}}" alt="">{{/each}}
-            <p>{{decription}}</p>
+        {{#each favourites}}<li class="myCalls__item" data-category="{{category}}" data-description="{{description}}"
+            data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}"
+            data-images="{{imageUrls}}" data-price="{{price}}">
+            {{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
+            <p>{{title}}</p>
             <p>{{price}}</p>
-        </li>
+        </li>{{/each}}
     </ul>
 </div>

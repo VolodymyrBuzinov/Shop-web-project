@@ -36,7 +36,7 @@
   &-add_button {
     @extend %button-throw;
     position: fixed;
-    display: flex;
+    display: none;
     top: 50%;
     right: 20px;
     justify-content: center;
@@ -45,6 +45,7 @@
     height: 50px;
     background-color: $main-color;
     border-radius: 50px;
+    z-index: 1500;
     @media screen and (min-width: 768px) {
       display: none;
     }
@@ -66,6 +67,10 @@
   &__close {
     width: 24px;
     height: 24px;
+  }
+  &__logout {
+    width: 20px;
+    height: 20px;
   }
   @media screen and (min-width: 320px) {
     display: flex;
@@ -152,24 +157,75 @@
     @media screen and (min-width: 768px) {
       margin-right: 20px;
     }
-    @media screen and (min-width: 1280px) {
-      display: none;
-    }
   }
   &__button {
     @extend %button-tablet-orange;
+    display: none;
   }
 }
 .registry-button {
-  @extend %button-desktop-white;
+  @extend %button-throw;
+  display: block;
+  padding: 30px;
+  text-align: center;
+  color: $bold-text-color;
+  background-color: $white-color;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 26px;
+  transition: $animation-timing;
+  border-right: 1px solid #e2e3e5;
+  &:hover {
+    color: $main-color;
+  }
   & span {
     @media screen and (max-width: 1279px) {
       display: none;
     }
+  }
+}
+.reg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
+}
+.logout-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 25px 20px 25px 20px;
+  border-left: 1px solid #e2e3e5;
+  &__icon {
+    width: 20px;
+    height: 20px;
+    transition: $animation-timing;
+    &:hover {
+      fill: $main-color;
+    }
+  }
+}
+.my-cabinet__button {
+  @extend %button-throw;
+  display: none;
+  color: $bold-text-color;
+  background-color: $white-color;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  transition: $animation-timing;
+  & span {
+    pointer-events: none;
+  }
+  &:hover {
+    color: $main-color;
+    fill: $main-color;
   }
 }
 .header-menu__search {
@@ -178,7 +234,7 @@
 .header-nav {
   width: 100%;
   transition: $animation-timing;
-  z-index: 200;
+  z-index: 500;
   @media screen and (max-width: 1279px) {
     position: absolute;
     top: 0;
@@ -238,6 +294,7 @@
   margin: 0;
   padding-top: 70px;
   padding-bottom: 115px;
+  background-color: #fff;
   &__item {
     @media screen and (max-width: 1279px) {
       padding-left: 35px;
@@ -305,6 +362,27 @@
     color: $main-color;
   }
 }
+.header-list__myCabinet {
+  @extend %link-throw;
+  display: none;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  align-items: center;
+  justify-content: left;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  color: $bold-text-color;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: $animation-timing;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: $main-color;
+    color: $main-color;
+  }
+}
 .header-menu__user {
   width: 20px;
   height: 20px;
@@ -328,6 +406,27 @@
     display: none;
   }
 }
+.header-menu__logout__button {
+  opacity: 0;
+  position: absolute;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  top: 97px;
+  transition: $animation-timing;
+  @media screen and (min-width: 320px) {
+    left: 50%;
+  }
+  @media screen and (min-width: 480px) {
+    left: 35%;
+  }
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+  &:hover {
+    fill: $main-color;
+  }
+}
 .header-menu__burger__button {
   @media screen and (min-width: 768px) {
     padding: 25px;
@@ -335,7 +434,6 @@
   }
 }
 .header-menu__search,
-.search-container__icon,
 .header-menu__burger,
 .header-menu__close {
   transition: $animation-timing;

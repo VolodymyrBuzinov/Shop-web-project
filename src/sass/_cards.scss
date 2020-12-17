@@ -1,42 +1,81 @@
 .card {
-  @extend %section-style;
+    @extend %section-style;
 
-  &__item {
-    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
-  }
-  &__text {
-    padding: 20px;
-  }
+    &__item{
+        box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+        
+        
+        
+    }
+    &__text{
+       padding: 20px; 
+    }
+    &__img-wraper{
+        position: relative;
+    }
+    &__svg{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 12px;
+        height: 12px;
+        
+    }
+    // &__svg-btn{
+    //     @extend %button-throw;
+    //     position: absolute;
+    //     right: 20px;
+    //     top: 20px;
+    //     width: 12px;
+    //     height: 12px;
+    //     background-color: none;
+
+    // }
+    &__svg2{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    
+}
+.isHidden {
+    visibility: hidden;
 }
 
 .container {
-  @extend %container-style;
+    @extend %container-style;
 }
 
-.card__list {
-  @extend %list-style, %list-throw;
+.card__list{
+    @extend %list-style, %list-throw;
+    
 }
 
-.card__img {
-  @extend %img-style;
+.card__img{
+   @extend %img-style;
+   
+   
 }
 
 .card__link {
-  @extend %link-throw;
+  @extend %link-throw; 
+  padding: 0; 
 }
 
-.double-price {
-  @extend %text-throw;
-  display: flex;
-  align-items: center;
-  text-align: start;
+.double-price{
+    @extend %text-throw;
+    display: flex;
+    align-items: center;
+    text-align: start;
 }
 
-.card__sale {
-  @extend %text-throw;
-  color: $main-color;
-  // margin-left: 10px;
+.card__sale{
+    @extend %text-throw;
+    color: $main-color; 
+    margin-left: 6px; 
 }
-.is_hiden {
-  display: none;
-}
+
+
