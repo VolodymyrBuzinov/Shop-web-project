@@ -25,7 +25,7 @@ newCaregoriesApi.onProperty().then(resul => renderCard(resul))
 
 function renderCard(resul) {
   card__listRef.innerHTML = '';
-  console.log(resul);
+  resul;
     if (resul.isOnSale) {
       saleRef.classList.remove('.isHidden');
       priceRef.innerHTML(resul.oldPrice);
@@ -40,9 +40,6 @@ card__listRef.addEventListener('click', onFavourite)
 function onFavourite(event) {
   event.preventDefault;
   const favId = event.target.dataset;
-  console.log(favId.id);
-  onPost(favId.id);
-  
-
-  
+  favId.id;
+  onPost(favId.id);  
 }
