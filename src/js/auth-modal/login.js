@@ -55,8 +55,7 @@ export default async function login(log) {
           links.addCalls.style.display = 'flex';
           links.navMyCabinetButton.style.display = 'flex';
           links.navLogoutButton.style.opacity = 1;
-          links.listAuthButton.style.display = 'none'; 
-          links.mobileAddButton.style.display = 'flex';
+          links.listAuthButton.style.display = 'none';           
         }
         const login = function (evt) {
           if (evt) {
@@ -75,8 +74,7 @@ export default async function login(log) {
              links.myCabinetButton.style.display = 'none';
              links.regButton.style.display = 'flex';
              links.logoutButton.style.display = 'none';
-            links.addCalls.style.display = 'none';  
-            links.mobileAddButton.style.display = 'none';
+            links.addCalls.style.display = 'none';              
             sessionStorage.clear();            
           }
         }

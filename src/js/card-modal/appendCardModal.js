@@ -10,7 +10,7 @@ try {
 
 function openCardModal(e) {
     if (e.target.classList[0] === 'card__img' || 'card__text') {
-        e.target.closest('.card__item').attributes,
+        e.target.closest('.card__item').getAttribute('data-images')
             e.target.closest('.card__item').getAttribute('data-description')
             e.target.closest('.card__item').getAttribute('data-category')
             e.target.closest('.card__item').getAttribute('data-category')
