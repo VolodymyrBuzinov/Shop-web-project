@@ -11,6 +11,9 @@ $roboto: 'Roboto', sans-serif;
 body {
   font-family: $roboto;
 }
+.SEARCH-FORM__img-block {
+  pointer-events: none;
+}
 //Сброс UL
 %list-throw {
   list-style: none;

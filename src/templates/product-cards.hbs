@@ -1,14 +1,16 @@
 {{#each this}}
-<li class="SEARCH-FORM__card" data-category="{{category}}" data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}"
-    data-id="{{_id}}" data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
+<li class="SEARCH-FORM__card" data-category="{{category}}" data-description="{{description}}" data-phone="{{phone}}"
+    data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}" data-images="{{imageUrls}}"
+    data-price="{{price}}">
+    <svg class="search-icon-heart" data-id="{{_id}}">
+        <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
+    </svg>
     <div class="SEARCH-FORM__img-block">
         {{#each imageUrls}}
         <img class="found-img" src={{this}} alt="{{title}}">
         {{/each}}
-        <svg class="search-icon-heart">
-            <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
-        </svg>
     </div>
+
     <h2>{{title}}</h2>
     <p>{{price}} грн.</p>
 </li>
