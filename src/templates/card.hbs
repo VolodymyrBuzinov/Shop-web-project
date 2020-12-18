@@ -1,19 +1,29 @@
-{{!-- ​{{#each this}}
-<li class="card__item" data-category={{category}} data-description={{description}} data-phone={{phone}}
-    data-userID={{userId}} data-id={{_id}}>
-
-    <div class="card__img-wraper">
-        <img class="card__img" src="{{imageUrls}}" alt="image">
-        <svg class="card__svg card__svg__check" data-id={{_id}}>
-            <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
-        </svg>
-
-    </div> --}}
 
 
-    {{#each this}}
+    
+​{{#each this}}
+<li class="card__item" data-category = {{category}} data-description = {{description}} data-phone = {{phone}} data-userID = {{userId}} data-id = {{_id}}>
+       
+            <div class="card__img-wraper">
+            <img class="card__img" src="{{imageUrls}}" alt="image">
+                <svg class="card__svg" data-id = {{_id}}><use href="../images/sprite/symbol-defs.svg#icon-heart"></use></svg>
+                
+            </div>
+        
+ <div class="card__text">
+        <h3 class="card__title">{{title}}</h3>
+        <div class="double-price">
+            <p class="card__price">{{price}} грн</p>
+            <p class="card__sale isHidden">{{oldPrice}}</p>
+        </div>
+    </div>
+
+</li>
+{{/each}}   
+
+{{!-- {{#each this}}
 <li class="card__item card__item category-cards__item slider-item swiper-slide" data-category={{category}}
-    data-description={{description}} data-id={{_id}} data-phone={{phone}} data-userID={{userId}}>
+    data-description={{description}} data-id = {{_id}} data-phone={{phone}} data-userID={{userId}}>
     <a class="card__link" href="">
         <div class="card__img-wraper">
             <img class="card__img" src="{{imageUrls}}" alt="image">
@@ -24,17 +34,7 @@
     </svg>
     <svg class="card__svg2">
         <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
-    </svg>
+    </svg> --}}
 
 
-    <div class="card__text">
-        <h3 class="card__title">{{title}}</h3>
-        <div class="double-price">
-            <p class="card__sale">{{oldPrice}}</p>
-            <p class="card__price">{{price}} грн</p>
-            <p class="card__sale isHidden">{{price}}</p>
-        </div>
-    </div>
-
-</li>
-{{/each}}
+    

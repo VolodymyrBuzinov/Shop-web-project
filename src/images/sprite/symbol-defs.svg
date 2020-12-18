@@ -7,7 +7,7 @@
             <path d="M20.307 10.202l-1.781-1.781L10.947 16l7.579 7.579 1.781-1.781L14.522 16l5.785-5.798z" />
         </symbol>
         <symbol id="icon-chevron_right-24px-1" viewBox="0 0 32 32">
-            <path fill="var(--color1, #fff)" d="M11.453 9.88L13.333 8l8 8-8 8-1.88-1.88L17.56 16l-6.107-6.12z" />
+            <path  d="M11.453 9.88L13.333 8l8 8-8 8-1.88-1.88L17.56 16l-6.107-6.12z" />
         </symbol>
         <symbol id="icon-close-24px-1" viewBox="0 0 32 32">
             <path

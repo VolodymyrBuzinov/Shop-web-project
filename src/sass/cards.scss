@@ -1,81 +1,80 @@
 .card {
-    @extend %section-style;
+  @extend %section-style;
 
-    &__item{
-        box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
-        
-        
-        
-    }
-    &__text{
-       padding: 20px; 
-    }
-    &__img-wraper{
-        position: relative;
-    }
-    &__svg{
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        width: 12px;
-        height: 12px;
-        
-    }
-    // &__svg-btn{
-    //     @extend %button-throw;
-    //     position: absolute;
-    //     right: 20px;
-    //     top: 20px;
-    //     width: 12px;
-    //     height: 12px;
-    //     background-color: none;
+  &__list {
+    @extend %list-style, %list-throw;
+  }
 
-    // }
-    &__svg2{
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        width: 12px;
-        height: 12px;
+  &__item {
+    height: 100% !important;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+    background-color: lavender;
+
+    @media screen and (min-width: 768px) {
+      // height: 350px;
     }
-    
-    
+  }
+
+  &__text {
+    padding: 20px;
+  }
+  &__img-wraper {
+    position: relative;
+    height: 275px;
+  }
+
+  &__img-wraper:hover::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 275px;
+    display: block;
+    content: '';
+  }
+  &__svg {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    fill: white;
+  }
+  &.check {
+    fill: $main-color;
+  }
 }
 .isHidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .container {
-    @extend %container-style;
+  @extend %container-style;
 }
 
-.card__list{
-    @extend %list-style, %list-throw;
-    
-}
-
-.card__img{
-   @extend %img-style;
-   
-   
+.card__img {
+  @extend %img-style;
+  height: 100%;
 }
 
 .card__link {
-  @extend %link-throw; 
-  padding: 0; 
+  @extend %link-throw;
+  padding: 0;
 }
 
-.double-price{
-    @extend %text-throw;
-    display: flex;
-    align-items: center;
-    text-align: start;
+.double-price {
+  @extend %text-throw;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  height: 16px;
 }
 
-.card__sale{
-    @extend %text-throw;
-    color: $main-color; 
-    margin-left: 6px; 
+.card__sale {
+  @extend %text-throw;
+  color: $main-color;
+  margin-left: 6px;
 }
-
-

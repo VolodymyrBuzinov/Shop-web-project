@@ -30,7 +30,7 @@
                             <img class="card__imgp" src="{{imageUrls}}" alt="image">
                         </div>
                     </a>
-                    <svg class="card__svgp" id="svg">
+                    <svg class="card__svgp" data-id = {{_id}} id="svg">
                         <use href="../images/sprite/symbol-defs.svg#icon-heart"></use>
                     </svg>
                     {{!-- <svg class="card__svg2">
@@ -40,7 +40,7 @@
                     <div class="card__textp">
                         <h3 class="card__titlep">{{title}}</h3>
                         <div class="card__double-pricep">
-                            <p class="card__salep {{#if isOnSale}} activp {{/if}}">{{oldPrice}}</p>
+                            {{#if isOnSale}} <p class="card__salep activp">{{oldPrice}} грн</p> {{/if}}
                             <p class="card__pricep" {{#if isOnSale}} style="color: #FF6B09" {{/if}}>{{price}} грн</p>
                         </div>
                     </div>
