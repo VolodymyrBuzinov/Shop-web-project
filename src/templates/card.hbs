@@ -13,7 +13,8 @@
 
     {{#each this}}
 <li class="card__item card__item category-cards__item slider-item swiper-slide" data-category={{category}}
-    data-description={{description}} data-id={{_id}} data-phone={{phone}} data-userID={{userId}}>
+    data-description={{"description"}} data-id={{_id}} data-phone={{phone}} data-userID={{userId}} data-category={{category}}
+    data-title={{title}} data-price={{price}} data-images={{imageUrls}} data-card-id={{_id}}
     <a class="card__link" href="">
         <div class="card__img-wraper">
             <img class="card__img" src="{{imageUrls}}" alt="image">

@@ -10,4 +10,5 @@ export default {
     title:       document.querySelector('.goods-modal__title'),
     close:       document.querySelector('.card-modal__close-btn'),
     closeSVG:    document.querySelector('.card-modal__icon-close'),
+    tumbnails:   document.querySelector('.card-modal_tumbnails-list'),
 }
