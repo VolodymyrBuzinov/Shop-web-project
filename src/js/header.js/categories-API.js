@@ -5,6 +5,7 @@ import links from './links';
 import { sliderMyCalls, sliderFavourites } from './custom-slider-for-cabinet';
 import favouritesCalls from '../../templates/favourites/favourites-and-myCalls.hbs';
 import { fillTheForm } from '../edit-modal-logic/edit-modal-open';
+import renderMain from '../pagination/render';
 
 export default class CategoriesApi {
   constructor(query) {
@@ -18,6 +19,7 @@ export default class CategoriesApi {
         links.myCabinetSection.classList.add('is-hidden');
         links.pagginationSection.classList.remove('is-hidden');
         links.pagButtons.classList.remove('is-hidden');
+        renderMain(result);
         return result;
       })
       .catch(error => console.log('error', error));

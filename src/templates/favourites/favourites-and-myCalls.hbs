@@ -14,7 +14,7 @@
     </div>
     <div class="js-custom-slider-container">
         
-        <ul class="myCalls__list js-myCalls__list js-custom-slider">
+        <ul class="myCalls__list js-myCalls__list js-custom-slider js-card-open">
 
             {{#each calls}}<li class="myCalls__item js-myCalls__item" data-category="{{category}}"
                 data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
@@ -48,7 +48,7 @@
     </div>
 
     <div class="js-custom-slider-container__favourites">
-        <ul class="favourites__list js-favourites__list js-custom-slider__favourites">
+        <ul class="favourites__list js-favourites__list js-custom-slider__favourites js-card-open">
             {{#each favourites}}<li class="myFavourites__item js-myFavourites__item" data-category="{{category}}"
                 data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
                 data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">

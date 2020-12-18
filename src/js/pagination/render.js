@@ -6,6 +6,5 @@ export default function renderDi(resul) {
   renderDiv.innerHTML = '';
   const markup = hendelDiv(resul);
   renderDiv.insertAdjacentHTML('afterbegin', markup);
-
   slider();
 }

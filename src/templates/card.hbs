@@ -2,15 +2,15 @@
 
     
 ​{{#each this}}
-<li class="card__item" data-category = {{category}} data-description = {{description}} data-phone = {{phone}} data-userID = {{userId}} data-id = {{_id}}>
-       
+<li class="card__item" data-category="{{category}}"
+                data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+                data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
+            <svg class="card__svg" data-id = {{_id}}><use href="../images/sprite/symbol-defs.svg#icon-heart" data-id = {{_id}}></use></svg>
             <div class="card__img-wraper">
             <img class="card__img" src="{{imageUrls}}" alt="image">
-                <svg class="card__svg" data-id = {{_id}}><use href="../images/sprite/symbol-defs.svg#icon-heart"></use></svg>
-                
             </div>
         
- <div class="card__text">
+    <div class="card__text">
         <h3 class="card__title">{{title}}</h3>
         <div class="double-price">
             <p class="card__price">{{price}} грн</p>

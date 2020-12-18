@@ -33,8 +33,11 @@ card__listRef.addEventListener('click', onFavourite);
 
 function onFavourite(event) {
   event.preventDefault;
-  const favId = event.target.dataset;
-  console.log(favId.id);
-  onPost(favId.id);
-  event.target.classList.add('check');
+  if (event.target.tagName === 'svg') {
+    const favId = event.target.dataset;
+    onPost(favId.id);
+    event.target.classList.add('check');
+  }
 }
+
+export { onFavourite };

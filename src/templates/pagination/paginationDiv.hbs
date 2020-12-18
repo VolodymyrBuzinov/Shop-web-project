@@ -21,10 +21,11 @@
             </button>
         </div>
         <div class="slider-container swiper-container">
-            <ul class="category-cards slider-track swiper-wrapper">
+            <ul class="category-cards slider-track swiper-wrapper js-card-open">
                 {{#each this}}
-                <li class="card__items category-cards__item slider-item swiper-slide" data-category={{category}}
-                    data-description={{description}} data-phone={{phone}} data-userID={{userId}}>
+                <li class="card__items category-cards__item slider-item swiper-slide" data-category="{{category}}"
+                data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+                data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
                     <a class="card__linkp" target="_blank" href="{{imageUrls}}">
                         <div class="card__img-wraperp ">
                             <img class="card__imgp" src="{{imageUrls}}" alt="image">
