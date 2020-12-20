@@ -68,7 +68,7 @@ body {
 %list-style {
   @extend %list-throw;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 20px;
   @media screen and (min-width: 320px) {
     grid-template-columns: 1fr;
   }
