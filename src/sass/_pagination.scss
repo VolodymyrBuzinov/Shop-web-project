@@ -24,8 +24,12 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
+    transition: $animation-timing;
+    &:hover {
+      fill: $main-color;
+    }
   }
   &__imgp {
     height: 100%;

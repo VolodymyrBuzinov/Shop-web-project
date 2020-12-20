@@ -1,15 +1,14 @@
-
-
-    
 ​{{#each this}}
-<li class="card__item" data-category="{{category}}"
-                data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
-                data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
-            <svg class="card__svg" data-id = {{_id}}><use href="../images/sprite/symbol-defs.svg#icon-heart" data-id = {{_id}}></use></svg>
-            <div class="card__img-wraper">
-            <img class="card__img" src="{{imageUrls}}" alt="image">
-            </div>
-        
+<li class="card__item" data-category="{{category}}" data-description="{{description}}" data-phone="{{phone}}"
+    data-userID="{{userId}}" data-id="{{_id}}" data-title="{{title}}" data-images="{{imageUrls}}"
+    data-price="{{price}}">
+    <svg class="card__svg" data-id={{_id}}>
+        <use href="../images/sprite/symbol-defs.svg#icon-heart-orange" data-id={{_id}}></use>
+    </svg>
+    <div class="card__img-wraper">
+        <img class="card__img" src="{{imageUrls}}" alt="image">
+    </div>
+
     <div class="card__text">
         <h3 class="card__title">{{title}}</h3>
         <div class="double-price">
@@ -19,11 +18,11 @@
     </div>
 
 </li>
-{{/each}}   
+{{/each}}
 
 {{!-- {{#each this}}
 <li class="card__item card__item category-cards__item slider-item swiper-slide" data-category={{category}}
-    data-description={{description}} data-id = {{_id}} data-phone={{phone}} data-userID={{userId}}>
+    data-description={{description}} data-id={{_id}} data-phone={{phone}} data-userID={{userId}}>
     <a class="card__link" href="">
         <div class="card__img-wraper">
             <img class="card__img" src="{{imageUrls}}" alt="image">
@@ -35,6 +34,3 @@
     <svg class="card__svg2">
         <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
     </svg> --}}
-
-
-    

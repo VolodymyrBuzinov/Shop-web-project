@@ -30,6 +30,8 @@ function renderCard(resul) {
 }
 
 card__listRef.addEventListener('click', onFavourite);
+const qq = document.querySelector('.pagination-div')
+qq.addEventListener('click', onFavourite)
 
 function onFavourite(event) {
   event.preventDefault;

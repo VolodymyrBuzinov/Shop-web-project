@@ -63,7 +63,7 @@ let navbarNav = document.querySelector('.navbar-nav');
 const renderDiv = document.querySelector('.pagination-div')
 const cleanButton = document.querySelector('.header-nav__clear__button')
 const cleanButton2 = document.querySelector('.header-menu__clear__button')
-const is_hiden = document.querySelector('.cardp')
+const is_hiden = document.querySelector('.card')
 
 function updatePage (e) {
     if (e.target.tagName !== "A") return

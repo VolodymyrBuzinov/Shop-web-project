@@ -148,7 +148,7 @@ export default class CategoriesApi {
     return fetch('https://callboard-backend.herokuapp.com/user', requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        result;
         if (sessionStorage['token']) {
           links.myCabinetSection.innerHTML = favouritesCalls(result);
           links.myCabinetSection.classList.remove('is-hidden');
@@ -163,8 +163,7 @@ export default class CategoriesApi {
             const accessToken = sessionStorage.getItem('token');
             var myHeaders = new Headers();
             myHeaders.append('Authorization', `Bearer ${accessToken}`);
-            const id = evt.target.dataset.id;
-            console.log(id);
+            const id = evt.target.dataset.id;           
             var requestOptions = {
               method: 'DELETE',
               headers: myHeaders,
@@ -193,8 +192,7 @@ export default class CategoriesApi {
 
         // Заполнение формы для измененния
         const myCallsContainer = document.querySelector('.myCalls__list');
-        myCallsContainer.addEventListener('click', e => {
-          console.log(e.target);
+        myCallsContainer.addEventListener('click', e => {         
           fillTheForm(e.target.dataset);
         });
 

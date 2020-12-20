@@ -51,10 +51,14 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     z-index: 1;
-    fill: white;
+    transition: $animation-timing;
+    fill: $white-color;
+    &:hover {
+      fill: $main-color;
+    }
   }
 }
 

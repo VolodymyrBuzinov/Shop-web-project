@@ -78,11 +78,9 @@ export default async function login(log) {
             sessionStorage.clear();            
           }
         }
-        // const myCabinet = function (evt) {
-        //   renderSection.innerHTML = favouritesCalls(user);
-        // }
-        links.logoutButton.addEventListener('click', logout)       
-        // links.myCabinetButton.addEventListener('click', myCabinet)
+        
+        links.logoutButton.addEventListener('click', logout)   
+        
         const myCallsContainer = document.querySelector('.myCalls__list');        
         myCallsContainer.addEventListener('click', e => {
           fillTheForm(e.target.dataset);
