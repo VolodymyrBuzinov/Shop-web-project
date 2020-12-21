@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  z-index: 5000;
 }
 .edit-modal__overlay.visible {
   display: flex;

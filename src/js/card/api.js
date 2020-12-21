@@ -77,7 +77,7 @@ removePagin.addEventListener('click', clickCategory)
 
 function clickCategory(e) {
     e.preventDefault();
-    
+    is_hiden.classList.remove('is-hidden')
     const query = e.target.getAttribute('class');
     if (e.target.tagName === "A") {
         const camelQuery = camelize(query)       
