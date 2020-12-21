@@ -6,6 +6,7 @@ import { sliderMyCalls, sliderFavourites } from './custom-slider-for-cabinet';
 import favouritesCalls from '../../templates/favourites/favourites-and-myCalls.hbs';
 import { fillTheForm } from '../edit-modal-logic/edit-modal-open';
 import renderMain from '../pagination/render';
+import { openCardModal } from '../card-modal/appendCardModal'
 
 export default class CategoriesApi {
   constructor(query) {
@@ -155,7 +156,9 @@ export default class CategoriesApi {
           links.pagginationSection.classList.add('is-hidden');
           links.cardSection.classList.add('is-hidden');
           links.pagButtons.classList.add('is-hidden');
+          links.seacrhSection.classList.add('is-hidden');
         }
+        
         // Удаление с избранных
         const myFavouritesList = document.querySelector('.js-favourites__list');
         const deleteFavourites = function (evt) {
@@ -195,7 +198,10 @@ export default class CategoriesApi {
         myCallsContainer.addEventListener('click', e => {         
           fillTheForm(e.target.dataset);
         });
-
+         const custom = document.querySelector('.js-favourites__list');
+        custom.addEventListener('click', evt => {         
+          openCardModal(evt);
+        })
         return result;
       })
       .catch(error => console.log('error', error));

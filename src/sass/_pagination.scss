@@ -37,6 +37,7 @@
   }
   &__linkp {
     @extend %link-throw;
+    pointer-events: none;
     padding: 0;
     & :not(:first-child) {
       display: none;

@@ -23,6 +23,7 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s;
+  z-index: 5000;
   &.is-open {
     opacity: 1;
     pointer-events: initial;
@@ -223,8 +224,30 @@
 
 .card-modal__image-tumbnail {
   @extend %img-style;
-  width: 68px;
-  height: 73px;
+  display: none;
+  width: 5px;
+  height: 5px;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+
+    &:nth-child(2) {
+      margin: 5px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    display: block;
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+
+    &:nth-child(2) {
+      margin: 5px;
+    }
+  }
 }
 
 /* 
@@ -294,8 +317,8 @@
 .goods-modal__button {
   @extend %button-mobile-orange;
   position: absolute;
-  top: 40px;
-  z-index: 1;
+  top: 60px;
+  z-index: 25;
 
   width: 255px;
   height: 60px;
@@ -318,12 +341,12 @@
   }
 
   @media screen and (min-width: 768px) {
-    top: 62px;
+    top: 81px;
     margin-top: 40px;
   }
 
   @media screen and (min-width: 1200px) {
-    top: 62px;
+    top: 81px;
     margin-top: 40px;
   }
 }
@@ -331,7 +354,7 @@
 .goods-modal__button-underinfo {
   // @extend %button-mobile-orange;
   // position:absolute;
-  z-index: 5;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -353,7 +376,7 @@
   background-color: #f5f6fb;
 
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
+    margin-top: 30px;
   }
   border: 2px solid $main-color;
 }

@@ -14,7 +14,8 @@ const refs = {
     cardSection: document.querySelector('.card'),
     pagination: document.querySelector('.section-pagination'),
     clearButton: document.querySelector('.header-nav__clear__button'),
-    clearButton2: document.querySelector('.header-menu__clear__button'),
+  clearButton2: document.querySelector('.header-menu__clear__button'),
+    myCabinetSection: document.querySelector('.js-calls-favourites'),
   };
 
   refs.clearButton.addEventListener('click', clearBtn);
@@ -79,6 +80,7 @@ function renderFoundProductsList(product) {
   refs.section.classList.remove('is-hidden');
   refs.cardSection.classList.add('is-hidden');
   refs.pagination.classList.add('is-hidden');
+  refs.myCabinetSection.classList.add('is-hidden');
 }
 
 function clearMarkup() {

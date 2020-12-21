@@ -4,6 +4,7 @@ import favouritesCalls from '../../templates/favourites/favourites-and-myCalls.h
 import { fillTheForm } from '../edit-modal-logic/edit-modal-open';
 import slider from '../category/slider';
 import links from '../header.js/links'
+import { openCardModal } from '../card-modal/appendCardModal'
 
 const renderSection = document.querySelector('.js-calls-favourites');
 
@@ -48,7 +49,7 @@ export default async function login(log) {
       .then(user => {            
         
         if (sessionStorage['token']) {
-          links.myCabinetSection.innerHTML = favouritesCalls(user);            
+          links.myCabinetSection.innerHTML = favouritesCalls(user);          
           links.myCabinetButton.style.display = 'flex';
           links.regButton.style.display = 'none';
           links.logoutButton.style.display = 'flex';
@@ -57,6 +58,7 @@ export default async function login(log) {
           links.navLogoutButton.style.opacity = 1;
           links.listAuthButton.style.display = 'none';           
         }
+
         const logout = function (evt) {
           if (evt) {
             var myHeaders = new Headers();
@@ -85,6 +87,11 @@ export default async function login(log) {
         myCallsContainer.addEventListener('click', e => {
           fillTheForm(e.target.dataset);
         });
+        const custom = document.querySelector('.js-favourites__list');
+        custom.addEventListener('click', evt => {          
+          openCardModal(evt);
+        })
+                
       });
   } catch (error) {
     console.log('error', error);

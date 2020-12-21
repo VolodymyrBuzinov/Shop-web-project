@@ -78,3 +78,5 @@ function closeCardModal(e) {
   document.querySelector('body').classList.remove('hidden');
   refs.parent.classList.remove('is-open');
 }
+
+export { openCardModal };

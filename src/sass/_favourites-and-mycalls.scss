@@ -1,3 +1,7 @@
+.calls-favourites {
+  padding-top: 15px;
+}
+
 .js-custom-slider-container {
   @media screen and (min-width: 1280px) {
     overflow: hidden;
@@ -10,11 +14,11 @@
 }
 .myCalls__item,
 .myFavourites__item {
-  @media screen and (min-width: 1280px) {
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
-  }
+  // @media screen and (min-width: 1280px) {
+  //   &:not(:last-child) {
+  //     margin-right: 15px;
+  //   }
+  // }
   // background-color: #f5f6fb;
   box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
   background-color: #f5f6fb;
@@ -26,7 +30,9 @@
     }
   }
 }
-
+.myFavourites__item {
+  position: relative;
+}
 .myCalls__list {
   // @extend %list-style;
   list-style: none;
@@ -99,7 +105,7 @@
 .calls-favourites__img-container {
   position: relative;
   height: 275px;
-  // pointer-events: fill;
+  pointer-events: none;
   &::before {
     content: '';
     position: absolute;
@@ -165,6 +171,7 @@
   border-radius: 20px;
   transition: $animation-timing;
   fill: $main-color;
+  z-index: 3000;
   &:hover {
     fill: $white-color;
   }

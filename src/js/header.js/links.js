@@ -21,7 +21,7 @@ export default {
     navLogoutButton: document.querySelector('.js-nav-logout-button'),
     navContainer: document.querySelector('.js-header-nav__container'),
     mobileAddButton: document.querySelector('.header-add_button'),    
-    
+    seacrhSection: document.querySelector('.search-section'),
     // callsItem: document.querySelectorAll('.js-myCalls__item'),
     // favouritesItem: document.querySelectorAll('.js-favourites__list'),
 }

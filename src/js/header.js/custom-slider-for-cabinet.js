@@ -12,7 +12,7 @@ const sliderMyCalls = function () {
   const movePosition = slidesToScroll * itemWidth;
 
   items.forEach(item => {
-    item.style.minWidth = `${itemWidth - 14}px`;
+    item.style.minWidth = `${itemWidth - 20}px`;
   });
 
   btnNext.addEventListener('click', () => {
@@ -62,7 +62,7 @@ const sliderFavourites = function () {
   const movePosition = slidesToScroll * itemWidth;
 
   items.forEach(item => {
-    item.style.minWidth = `${itemWidth - 14}px`;
+    item.style.minWidth = `${itemWidth - 20}px`;
   });
 
   btnNext.addEventListener('click', () => {
