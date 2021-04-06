@@ -18,8 +18,7 @@ newCaregoriesApi.onTrade().then(resul => renderCard(resul));
 newCaregoriesApi.onProperty().then(resul => renderCard(resul));
 
 function renderCard(resul) {
-  card__listRef.innerHTML = '';
-  // console.log(resul);
+  card__listRef.innerHTML = '';  
   if (resul.isOnSale) {
     saleRef.classList.remove('.isHidden');
     priceRef.innerHTML(resul.oldPrice);
